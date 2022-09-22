@@ -37,12 +37,16 @@ def addLinksToRefNo(newHTML, RNList):
     return newHTML
 
 
+def deleteNewLineSigns(newHTML):
+    return newHTML.replace('\\n', '<br>').replace('\\t', '\t')
+
 def say_hello(request):
     import pandas as pd
     nrows = 3
     df = pd.read_csv("AllOffers_21_09_2022.csv", nrows=nrows)
     df = df[["RefNo", "City", "Deadline"]]
     newHTML = clearHTMLCode(df.to_html())
+    newHTML = deleteNewLineSigns(newHTML)
     newHTML = deleteIDColumn(newHTML, nrows)
     newHTML = addSortingButtons(newHTML, df)
     newHTML = addLinksToRefNo(newHTML, df["RefNo"])
@@ -58,7 +62,9 @@ def detail(request, question_id):
     OfferId = question_id
     df = pd.read_csv("AllOffers_21_09_2022.csv")
     rowWithOffer = df.loc[df['RefNo'] == OfferId]
+    rowWithOffer = rowWithOffer.transpose() # to show it vertically
     newHTML = clearHTMLCode(rowWithOffer.to_html())
+    newHTML = deleteNewLineSigns(newHTML)
     newHTML = deleteIDColumn(newHTML)
     return render(request, "detail_view_1.html", {"table": newHTML})
 
