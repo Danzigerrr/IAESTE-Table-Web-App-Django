@@ -10,19 +10,19 @@
   <tbody>
     <tr>
       
-      <td>BD-2022-FASHION3</td>
+      <td><a href="http://127.0.0.1:8000/playground/hello/BD-2022-FASHION3" target="_blank">BD-2022-FASHION3</a></td>
       <td>DHAKA</td>
       <td>2022-09-27</td>
     </tr>
     <tr>
       
-      <td>BD-2022-FLUID1</td>
+      <td><a href="http://127.0.0.1:8000/playground/hello/BD-2022-FLUID1" target="_blank">BD-2022-FLUID1</a></td>
       <td>Dhaka</td>
       <td>2022-09-30</td>
     </tr>
     <tr>
       
-      <td>BD-2022-FLUID2</td>
+      <td><a href="http://127.0.0.1:8000/playground/hello/BD-2022-FLUID2" target="_blank">BD-2022-FLUID2</a></td>
       <td>Dhaka</td>
       <td>2022-10-13</td>
     </tr>
