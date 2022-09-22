@@ -1,0 +1,30 @@
+<table id="myTable" border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      
+      <th onclick="sortTable(0)">RefNo</th>
+      <th onclick="sortTable(0)">City</th>
+      <th onclick="sortTable(0)">Deadline</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      
+      <td>BD-2022-FASHION3</td>
+      <td>DHAKA</td>
+      <td>2022-09-27</td>
+    </tr>
+    <tr>
+      
+      <td>BD-2022-FLUID1</td>
+      <td>Dhaka</td>
+      <td>2022-09-30</td>
+    </tr>
+    <tr>
+      
+      <td>BD-2022-FLUID2</td>
+      <td>Dhaka</td>
+      <td>2022-10-13</td>
+    </tr>
+  </tbody>
+</table>
