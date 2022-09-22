@@ -35,6 +35,7 @@ def addLinksToRefNo(newHTML, RNList):
     return newHTML
 
 
+
 def say_hello(request):
     import pandas as pd
     nrows = 3
@@ -44,6 +45,7 @@ def say_hello(request):
     newHTML = deleteIDColumn(newHTML, nrows)
     newHTML = addSortingButtons(newHTML)
     #newHTML = addLinksToRefNo(newHTML, df["RefNo"])
+
 
     with open('test.txt', 'w') as f:
         f.write(newHTML)
