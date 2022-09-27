@@ -1,78 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <meta charset="UTF-8">
-    <title>Peopleeeeee</title>
-
-    <style>
-    table {
-      border-spacing: 0;
-      border: 1px solid #ddd;
-    }
-
-    th {
-      cursor: pointer;
-    }
-
-    th, td {
-      text-align: left;
-      padding: 16px;
-    }
-
-    tr:nth-child(even) {
-      background-color: #f2f2f2
-    }
-
-
-
-
-
-
-
-    <!-- transposing table -->
-    body {
-    font-family: Helvetica, Arial, sans-serif;
-    }
-
-    table {
-        border-collapse: collapse;
-        margin-bottom: 24px;
-    }
-
-    th, td {
-        border: 1px solid black;
-        padding: 8px;
-    }
-
-    .transpose thead,
-    .transpose tbody,
-    .transpose tr {
-        display: inline-block;
-    }
-
-    .transpose tbody tr {
-        margin-right: 0em;
-    }
-
-    .transpose th,
-    .transpose td {
-        display: block;
-    }
-
-
-
-
-
-
-
-    </style>
-
+    <title>IAESTE Offers - Poland</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/offerDetailsStyles.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/verticalMenuStyles.css' %}"/>
+    <script src="{% static 'JavaScript/JsScripts.js' %}"></script>
 
 </head>
 
+<body class="tableWithOffers">
 
-<body class="mytable" onload="transp">
+    <div class="pageTitleClass">
+        <div id="pageTitle">Offer {{offer.RefNo}} details</div>
+    </div>
+
+    <!-- Menu vertical on the left side -->
+    <ul>
+        <li><a href="http://127.0.0.1:8000/playground/hello/">Offers list</a></li>
+        <li><a href="news.asp">Offers map</a></li>
+        <li><a href="about.asp">About project</a></li>
+        <li><a href="contact.asp">About author</a></li>
+    </ul>
+
      <div id="TableOffers">
 
         <table id="tableWithOffers" class="transpose">
