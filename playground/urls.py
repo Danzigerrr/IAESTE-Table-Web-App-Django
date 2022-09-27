@@ -1,6 +1,5 @@
 from django.urls import path
 from . import views
-from playground.views import PersonListView
 
 
 # URL conf
@@ -9,5 +8,4 @@ urlpatterns = [
     path('hello/<str:question_id>', views.detail, name = 'detail'),
     path('hello/<str:question_id>/city', views.city, name = 'city'),
     path('hello/<int:question_id>/results', views.results, name='results'),
-    path("people/", PersonListView.as_view(), name="people")
 ]
