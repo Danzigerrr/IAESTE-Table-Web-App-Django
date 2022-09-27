@@ -34,6 +34,12 @@
     }
 
 
+    .link
+    {
+       color: black;
+       text-decoration: none;
+    }
+
     </style>
 
 
@@ -99,22 +105,6 @@
       }
     }
 
-    function Geeks() {
-        // Getting the table
-        var tble = document.getElementById('tableWithOffers');
-
-        // Getting the rows in table.
-        var row = tble.rows;
-
-        // Removing the column at index(1).
-        var i = 1;
-        for (var j = 0; j < row.length; j++) {
-
-            // Deleting the ith cell of each row.
-            row[j].deleteCell(i);
-        }
-
-    }
     </script>
 
 
@@ -133,9 +123,19 @@
             <tbody>
                 {% for offer in offer_list %}
                     <tr>
-                        <td class="RefNo">{{offer.RefNo}} </td>
-                        <td class="City"> {{offer.City}} </td>
-                        <td class="Deadline"> {{offer.Deadline}} </td>
+                        <td class="RefNo">
+                            {{offer.RefNo}}
+                        </td>
+
+                        <td class="City">
+                            <a class="link" href="http://127.0.0.1:8000/playground/hello/{{offer.RefNo}}/city" target="_blank">
+                                {{offer.City}}
+                            </a>
+                        </td>
+
+                        <td class="Deadline">
+                            {{offer.Deadline}}
+                        </td>
 
                         <td>
                             <form action="http://127.0.0.1:8000/playground/hello/{{offer.RefNo}}" method="get" target="_blank">
@@ -148,10 +148,10 @@
             </tbody>
         </table>
     </div>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 
 
-    <!-- "safe" is used in order to display string of html code as a html objects on website -->
-    <!--  {{table | safe}} -->
+
+
+
 </body>
 </html>

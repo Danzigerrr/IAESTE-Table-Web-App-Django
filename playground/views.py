@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-
+# DELETE BEGIN
 def clearHTMLCode(htmlCode):
     result = htmlCode
     result = result.replace("['']", "")
@@ -15,7 +15,6 @@ def addSortingButtons(newHTML, df):
     newHTML = newHTML.replace("<table ", '<table id="myTable" ')
     for col in df.columns:
         newHTML = newHTML.replace("<th>"+col+"</th>", '<th onclick="sortTable(0)">' + col + '</th>')
-    # print(newHTML)
     return newHTML
 
 
@@ -51,6 +50,8 @@ def addLinksToCityName(newHTML, RNList, cityNames):
         newHTML = newHTML.replace(currrentTD, '<td>' + href + '</td>')
     return newHTML
 
+# DELETE END
+
 
 def say_hello(request):
     from scripts import loadFromCSV as load
@@ -58,21 +59,7 @@ def say_hello(request):
     from playground.models import Offer
     offer_list = Offer.objects.all()
 
-    import pandas as pd
-    nrows = 3
-    df = pd.read_csv("AllOffers_21_09_2022.csv", nrows=nrows)
-    df = df[["RefNo", "City", "Deadline"]]
-    newHTML = clearHTMLCode(df.to_html())
-    newHTML = deleteNewLineSigns(newHTML)
-    newHTML = deleteIDColumn(newHTML, nrows)
-    newHTML = addSortingButtons(newHTML, df)
-    newHTML = addLinksToRefNo(newHTML, df["RefNo"])
-    newHTML = addLinksToCityName(newHTML, df["RefNo"], df["City"])
-
-    with open('test.txt', 'w') as f:
-        f.write(newHTML)
-
-    return render(request, "playground_view_1.html", {"table": newHTML, "offer_list": offer_list})
+    return render(request, "playground_view_1.html", {"offer_list": offer_list})
 
 
 def findGeocode(city):
@@ -145,7 +132,10 @@ def city(request, question_id):
 
 def detail(request, question_id):
     from playground.models import Offer
-    offer_list = Offer.objects.all()
+    offer = Offer.objects.get(RefNo=question_id)
+
+
+
 
     import pandas as pd
     OfferId = question_id
@@ -155,7 +145,7 @@ def detail(request, question_id):
     newHTML = clearHTMLCode(rowWithOffer.to_html())
     newHTML = deleteNewLineSigns(newHTML)
     newHTML = deleteIDColumn(newHTML)
-    return render(request, "detail_view_1.html", {"table": newHTML, "offer_list": offer_list})
+    return render(request, "detail_view_1.html", {"table": newHTML, "offer": offer})
 
 
 def results(request, question_id):

@@ -8,7 +8,6 @@
     <style>
     table {
       border-spacing: 0;
-      width: 70%;
       border: 1px solid #ddd;
     }
 
@@ -24,13 +23,88 @@
     tr:nth-child(even) {
       background-color: #f2f2f2
     }
+
+
+
+
+
+
+
+    <!-- transposing table -->
+    body {
+    font-family: Helvetica, Arial, sans-serif;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin-bottom: 24px;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+    }
+
+    .transpose thead,
+    .transpose tbody,
+    .transpose tr {
+        display: inline-block;
+    }
+
+    .transpose tbody tr {
+        margin-right: 0em;
+    }
+
+    .transpose th,
+    .transpose td {
+        display: block;
+    }
+
+
+
+
+
+
+
     </style>
 
 
 </head>
 
 
-<body class="mytable" >
+<body class="mytable" onload="transp">
+     <div id="TableOffers">
+
+        <table id="tableWithOffers" class="transpose">
+            <thead>
+                <tr>
+                    <th>RefNo</th>
+                    <th>City</th>
+                    <th>Deadline</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="RefNo">
+                        {{offer.RefNo}}
+                    </td>
+
+                    <td class="City">
+                        <a class="link" href="http://127.0.0.1:8000/playground/hello/{{offer.RefNo}}/city" target="_blank">
+                            {{offer.City}}
+                        </a>
+                    </td>
+
+                    <td class="Deadline">
+                        {{offer.Deadline}}
+                    </td>
+
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
 
 
     <script>
@@ -39,6 +113,6 @@
 
 
     <!-- "safe" is used in order to display string of html code as a html objects on website -->
-    {{table | safe}}
+    <!-- {{table | safe}} -->
 </body>
 </html>
