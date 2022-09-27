@@ -9,11 +9,13 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/verticalMenuStyles.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/authorFootnoteStyles.css' %}"/>
     <script src="{% static 'JavaScript/JsScripts.js' %}"></script>
+    <script src="{% static 'JavaScript/staticElemAdder.js' %}"></script>
+
 
 </head>
 
 
-<body class="tableWithOffers" onload="updateDate()">
+<body class="tableWithOffers" onload="updateDate(); addVerticalMenu(); addAuthorFootnote()">
 
 
     <div class="pageTitleClass">
@@ -21,14 +23,7 @@
         <p id="current_date"> </p>
     </div>
 
-    <!-- Menu vertical on the left side -->
-    <ul>
-        <li><a href="http://127.0.0.1:8000/playground/hello/">Offers list</a></li>
-        <li><a href="news.asp">Offers map</a></li>
-        <li><a href="about.asp">About project</a></li>
-        <li><a href="contact.asp">About author</a></li>
-    </ul>
-
+    <div id="verticalMenuElement"></div>
 
     <!-- Offers list -->
     <div id="TableOffers">
@@ -75,7 +70,7 @@
     <br>
     <br>
 
-    <p id="authorFootnote"> Author: Krzysztof Nazar</p>
+    <div id="authorFootnote"></div>
 
 </body>
 </html>
