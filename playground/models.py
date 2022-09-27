@@ -15,3 +15,11 @@ class Choice(models.Model):
 class Person(models.Model):
     name = models.CharField(max_length=100, verbose_name="full name")
 
+
+class Offer(models.Model):
+    RefNo = models.CharField(max_length=200)
+    City = models.CharField(max_length=200)
+    Deadline = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.RefNo

@@ -24,19 +24,29 @@
     tr:nth-child(even) {
       background-color: #f2f2f2
     }
+
+    .body {
+      font-family:sans-serif;
+    }
+    td {
+      padding:10px;
+      border:solid 1px #eee;
+    }
+
+
     </style>
 
 
 </head>
 
 
-<body class="mytable" >
+<body class="tableWithOffers" >
 
 
     <script>
     function sortTable(n) {
       var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-      table = document.getElementById("myTable");
+      table = document.getElementById("tableWithOffers");
       switching = true;
       //Set the sorting direction to ascending:
       dir = "asc";
@@ -91,7 +101,7 @@
 
     function Geeks() {
         // Getting the table
-        var tble = document.getElementById('myTable');
+        var tble = document.getElementById('tableWithOffers');
 
         // Getting the rows in table.
         var row = tble.rows;
@@ -109,7 +119,39 @@
 
 
 
+    <div id="TableOffers">
+
+        <table id="tableWithOffers">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">RefNo</th>
+                    <th onclick="sortTable(1)">City</th>
+                    <th onclick="sortTable(2)">Deadline</th>
+                    <th> Details </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for offer in offer_list %}
+                    <tr>
+                        <td class="RefNo">{{offer.RefNo}} </td>
+                        <td class="City"> {{offer.City}} </td>
+                        <td class="Deadline"> {{offer.Deadline}} </td>
+
+                        <td>
+                            <form action="http://127.0.0.1:8000/playground/hello/{{offer.RefNo}}" method="get" target="_blank">
+                                <button type="submit">See details</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+
+
     <!-- "safe" is used in order to display string of html code as a html objects on website -->
-    {{table | safe}}
+    <!--  {{table | safe}} -->
 </body>
 </html>

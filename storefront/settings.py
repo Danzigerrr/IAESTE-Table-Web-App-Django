@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'storefront',
     'debug_toolbar',
     "django_tables2",
+
 ]
 
 MIDDLEWARE = [
