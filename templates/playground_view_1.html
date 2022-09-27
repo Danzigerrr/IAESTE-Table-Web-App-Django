@@ -4,14 +4,20 @@
 <head>
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <meta charset="UTF-8">
-    <title>Peopleeeeee</title>
+    <title>IAESTE Offers - Poland</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
     <script src="{% static 'JavaScript/sortingColumns.js' %}"></script>
 
 </head>
 
 
-<body class="tableWithOffers" >
+<body class="tableWithOffers" onload="updateDate()">
+
+
+    <div class="pageTitleClass">
+        <div id="pageTitle">IAESTE OFFERS - POLAND</div>
+        <p id="current_date"> </p>
+    </div>
 
     <!-- Menu vertical on the left side -->
     <ul>
@@ -20,6 +26,7 @@
         <li><a href="about.asp">About project</a></li>
         <li><a href="contact.asp">About author</a></li>
     </ul>
+
 
     <!-- Offers list -->
     <div id="TableOffers">

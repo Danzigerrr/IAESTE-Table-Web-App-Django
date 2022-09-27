@@ -84,9 +84,9 @@ li a:hover {
 
     ul {
         list-style-type: none;
-        margin-left: 2%;
-        margin-right: 2%;
-        margin-top: 2%;
+        margin-left: 1.6em;
+        margin-right: 1.6em;
+        margin-top: 1em;
         padding: 0;
         width: auto;
         background-color: #f1f1f1;
@@ -94,13 +94,30 @@ li a:hover {
         position: fixed; /* Make it stick, even on scroll */
         overflow: auto; /* Enable scrolling if the sidenav has too much content */
         border: 1px solid #555;
-        font-size: large;
+        font-size: 1.3em;
         font-family: Arial, serif;
-        line-height: 2;
+        line-height: 2em;
 }
 
 
 li {
   text-align: center;
   border-bottom: 1px solid #555;
+}
+
+.pageTitleClass{
+    text-align: center;
+    color: navajowhite;
+    font-weight: bold;
+    font-family: "Arial Black", serif;
+}
+#pageTitle{
+    font-size: 4em;
+    margin-top: 0.5em;
+}
+
+#current_date{
+    font-size: 2em;
+    margin-bottom: 1em;
+    margin-top: .5em;
 }
