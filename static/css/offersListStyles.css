@@ -121,3 +121,11 @@ li {
     margin-bottom: 1em;
     margin-top: .5em;
 }
+
+button{
+    font-size: 1em;
+    border-radius: 12px;
+    padding: 4px 10px;
+    background-color: darkgray;
+    cursor:pointer;
+}
