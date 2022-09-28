@@ -30,9 +30,7 @@ def getLatAndLong(cityName):
 
 def createMap(cityName):
     import folium
-    print('city:' + cityName)
     latitude, longitude = getLatAndLong(cityName)
-    print('long lat:' + str(longitude) + " " + str(latitude))
     # adjust position of view of the map
     my_map = folium.Map(
         location=[13, 16],
@@ -110,10 +108,6 @@ def createMapForMultipleOffers():
     allOffers = Offer.objects.all()
 
     cityFreq = countFrequenciesOfCities(allOffers)
-    print("FREQ:")
-    print(cityFreq)
-    print("\n\n")
-
 
     import folium
 
@@ -124,8 +118,6 @@ def createMapForMultipleOffers():
 
     for city, counter in cityFreq.items():
         offerList = list(Offer.objects.filter(City=city))
-        print("offerList:")
-        print(offerList)
 
         lat, long = getLatAndLong(city)
 

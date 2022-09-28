@@ -27,7 +27,10 @@ th{
 td{
     text-align: center;
     font-size: 1.2em;
+
 }
 table, th, td {
   border: 1px solid;
+    padding:2%;
+    line-height: 0.5em;
 }

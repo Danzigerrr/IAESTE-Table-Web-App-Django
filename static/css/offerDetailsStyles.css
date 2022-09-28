@@ -1,65 +1,47 @@
 table {
-        border-spacing: 0;
-        font-family: Arial, serif;
-    width: 40em;
+    border-spacing: 0;
+    font-family: Arial, serif;
+    width:65%;
+}
 
-    }
+body {
+  font-family:sans-serif;
+    background-color: #005E9E;
+}
 
-    th, td {
-        line-height: 2em;
-    }
-    th{
-        width: 10em;
-        text-align: center;
-    }
-    td{
-        width: 25em;
-    }
+table, th, td {
+  border: 1px solid;
+}
 
-    td:nth-child(even) {
-      background-color: #f2f2f2;
-    }
+.link
+{
+   color: black;
+   text-decoration: none;
+}
 
-    .body {
-      font-family:sans-serif;
-    }
+#tableWithOffers{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+    background-color: navajowhite;
 
+}
 
+th{
+    background-color: #afffff;
+    text-align: center;
+    font-size: large;
+    line-height: 2em;
 
-    .link
-    {
-       color: black;
-       text-decoration: none;
-    }
+}
 
-    .tableWithOffers{
-        background-color: #005E9E;
-    }
-
-    #tableWithOffers{
-        background-color: #e1ffff;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: auto;
-        margin-top: auto;
-    }
-
-    th{
-        background-color: #afffff;
-        text-align: center;
-        font-size: large;
-
-    }
-
-    td{
-        background-color: white;
-        text-align: left;
-        font-size: large;
-    }
-
-
-
-
+td{
+    text-align: left;
+    font-size: large;
+    line-height: 2em;
+    padding: 1%;
+}
 
 .pageTitleClass{
     text-align: center;
@@ -73,31 +55,19 @@ table {
     margin-bottom: 0.5em;
 }
 
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
 
+#headerField{
+    width:15%;
+    font-size: 1.5em;
+}
 
+#headerInformation{
+    width:50%;
+    font-size: 1.5em;
 
-
-    <!-- transposing table -->
-    body {
-        font-family: Helvetica, Arial, sans-serif;
-    }
-
-
-    .transpose thead,
-    .transpose tbody,
-    .transpose tr {
-        display: inline-block;
-    }
-
-    .transpose tbody tr {
-        margin-right: 0em;
-    }
-
-    .transpose th,
-    .transpose td {
-        display: block;
-    }
-
-
+}
 
 

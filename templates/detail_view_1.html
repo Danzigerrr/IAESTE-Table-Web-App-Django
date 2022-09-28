@@ -22,33 +22,128 @@
 
      <div id="TableOffers">
         <table id="tableWithOffers" class="transpose">
-            <thead>
-                <tr>
-                    <th>RefNo</th>
-                    <th>City</th>
-                    <th>Deadline</th>
-                </tr>
-            </thead>
-            <tbody>
+            <tr>
+                <th id="headerField">Field</th>
+                <th id="headerInformation">Information</th>
+            </tr>
 
-                <tr>
-                    <td class="RefNo">
-                        {{offer.RefNo}}
-                    </td>
+            <tr>
+                <td>Ref. No.</td>
+                <td class="normalField">{{offer.RefNo}}</td>
+            </tr>
+            <tr>
+                <td>Deadline</td>
+                <td class="normalField">{{offer.Deadline}}</td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td class="normalField">{{offer.City}}</td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td class="normalField">{{offer.Country}}</td>
+            </tr>
+            <tr>
+                <td>Offer type</td>
+                <td class="normalField">{{offer.OfferType}}</td>
+            </tr>
+            <tr>
+                <td>Gross pay</td>
+                <td class="normalField">{{offer.GrossPay}}</td>
+            </tr>
+            <tr>
+                <td>General disciplines</td>
+                <td class="normalField">{{offer.GeneralDisciplines}}</td>
+            </tr>
+            <tr>
+                <td>Fields of study</td>
+                <td class="normalField">{{offer.FieldsOfStudy}}</td>
+            </tr>
+            <tr>
+                <td>Required knowledge and experiences</td>
+                <td class="normalField">{{offer.RequiredKnowledgeAndExperiences}}</td>
+            </tr>
+            <tr>
+                <td>Other requirements.</td>
+                <td class="normalField">{{offer.OtherRequirements}}</td>
+            </tr>
+            <tr>
+                <td>Completed years of study</td>
+                <td class="normalField">{{offer.CompletedYearsOfStudy}}</td>
+            </tr>
+            <tr>
+                <td>Language requirements</td>
+                <td class="normalField">{{offer.LanguageRequirements}}</td>
+            </tr>
+            <tr>
+                <td>Work weeks min</td>
+                <td class="normalField">{{offer.WorkWeeksMin}}</td>
+            </tr>
+            <tr>
+                <td>Work weeks max</td>
+                <td class="normalField">{{offer.WorkWeeksMax}}</td>
+            </tr>
+            <tr>
+                <td>From</td>
+                <td class="normalField">{{offer.From}}</td>
+            </tr>
+            <tr>
+                <td>To</td>
+                <td class="normalField">{{offer.To}}</td>
+            </tr>
+            <tr>
+                <td>Alternative from</td>
+                <td class="normalField">{{offer.AlternativeFrom}}</td>
+            </tr>
+            <tr>
+                <td>Alternative to</td>
+                <td class="normalField">{{offer.AlternativeTo}}</td>
+            </tr>
+            <tr>
+                <td>Company closed from</td>
+                <td class="normalField">{{offer.CompanyClosedFrom}}</td>
+            </tr>
+            <tr>
+                <td>Company closed to</td>
+                <td class="normalField">{{offer.CompanyClosedTo}}</td>
+            </tr>
+            <tr>
+                <td>Work offered description</td>
+                <td class="normalField">{{offer.WorkOfferedDescription}}</td>
+            </tr>
+            <tr>
+                <td>Working hours</td>
+                <td class="normalField">{{offer.WorkingHours}}</td>
+            </tr>
+            <tr>
+                <td>Employer</td>
+                <td class="normalField">{{offer.Employer}}</td>
+            </tr>
+            <tr>
+                <td>Workplace</td>
+                <td class="normalField">{{offer.Workplace}}</td>
+            </tr>
+            <tr>
+                <td>Website</td>
+                <td class="normalField"> <a href ="{{offer.Website}}" target="_blank">{{offer.Website}} </a></td>
+            </tr>
+            <tr>
+                <td>Lodging by</td>
+                <td class="normalField">{{offer.LodgingBy}}</td>
+            </tr>
+            <tr>
+                <td>Living cost</td>
+                <td class="normalField">{{offer.LivingCost}}</td>
+            </tr>
+            <tr>
+                <td>EstCost of lodging</td>
+                <td class="normalField">{{offer.EstCostOfLodging}}</td>
+            </tr>
+            <tr>
+                <td>Additional info</td>
+                <td class="normalField">{{offer.AdditionalInfo}}</td>
+            </tr>
 
-                    <td class="City">
-                        <a class="link" href="http://127.0.0.1:8000/playground/hello/{{offer.RefNo}}/city" target="_blank">
-                            {{offer.City}}
-                        </a>
-                    </td>
-
-                    <td class="Deadline">
-                        {{offer.Deadline}}
-                    </td>
-
-                </tr>
-
-            </tbody>
         </table>
     </div>
 
