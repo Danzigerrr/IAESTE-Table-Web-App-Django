@@ -46,18 +46,38 @@ def createMap(cityName):
     return my_map
 
 
-
 # ---------------------
 
+def setColorOfOffer(offerType):
+    match offerType:
+        case "COBE":
+            return "#bb5afd"
+        case "FCFS":
+            return "#fdfa5a"
+        case "PreAC":
+            return "#5afdb2"
+        case default:
+            return "#FFFFFF"
+
+
 def popup_html(offerList, offerCount, city):
-    left_col_color = "#3e95b5"
-    right_col_color = "#f2f9ff"
+    left_col_color = "#dfe6e3"
+    right_col_color = "#ffffff"
 
     rows = ""
     for offer in offerList:
+        color = setColorOfOffer(offer.OfferType)
+
         row = "<tr>"
-        row += '<td style="background-color: """ + left_col_color + """;"><span>' + offer.RefNo + '</span></td>'
-        row += '<td style = "width: 150px;background-color: """ + right_col_color + """;"> <a href=\"http://127.0.0.1:8000/playground/hello/' + offer.RefNo + '\" target=\"_blank\">Details</a></td>'
+        row += '<td style="background-color:' + color + ';"><span>' + offer.RefNo + '</span></td>'
+        row += '<td style="background-color:' + color + ';"><span>' + offer.OfferType + '</span></td>'
+
+        button = '<form action="http://127.0.0.1:8000/playground/hello/' + offer.RefNo + '" method="get" ' \
+                                                                                         'target="_blank"> <button ' \
+                                                                                         'type="submit">Details' \
+                                                                                         '</button> </form> '
+
+        row += '<td style = "width: 150px;background-color: ' + color + ';"> ' + button + '</td>'
         row += "</tr>"
         rows += row
 
@@ -67,7 +87,6 @@ def popup_html(offerList, offerCount, city):
     else:
         offersInfo = "offers"
 
-
     html = """<!DOCTYPE html>
         <html>
         <head>
@@ -75,11 +94,12 @@ def popup_html(offerList, offerCount, city):
             <h4 class="tableHeader"> """ + str(offerCount) + ' ' + offersInfo + ' in ' + city + """</h4>
 
         </head>
-            <table>
+            <table id="popupTable" class="centerTable">
             <thead>
                   <tr>
-                    <th>RefNo</th>
-                    <th>Details</th>
+                    <th id="RefNoHeader">RefNo</th>
+                    <th id="OfferTypeHeader">Type</th>
+                    <th id="DetailsHeader">Details</th>
                   </tr>
             </thead>
                 <tbody>
@@ -128,6 +148,3 @@ def createMapForMultipleOffers():
                       icon=folium.Icon(color='blue', icon='university', prefix='fa')).add_to(my_map)
 
     return my_map
-
-
-

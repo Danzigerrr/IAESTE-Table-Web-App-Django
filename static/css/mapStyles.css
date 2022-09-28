@@ -2,26 +2,13 @@
     text-align: center;
     width: 13em;
     font-family: "Arial Black", serif;
-    font-size: 1.9em;
+    font-size: 1.7em;
 }
 
 
 table{
     height: auto;
     width: 10em;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-body{
-    text-align: center;
-}
-
-
-th{
-    text-align: center;
-    font-size: 1.5em;
 }
 
 td{
@@ -30,7 +17,31 @@ td{
 
 }
 table, th, td {
-  border: 1px solid;
-    padding:2%;
-    line-height: 0.5em;
+    border: 1px solid;
+}
+
+#RefNoHeader{
+    width:40%;
+}
+#DetailsHeader{
+    width:40%;
+}
+#OfferTypeHeader{
+    width:40%;
+}
+
+#RefNoHeader, #DetailsHeader,#OfferTypeHeader{
+    font-size: 1.4em;
+    text-align: center;
+    padding: 0.5em;
+}
+#popupTable{
+    padding: 2%;
+    margin: 2%;
+    text-align: center;
+}
+
+.centerTable{
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from scripts.mapHandler import *
 
 def say_hello(request):
-    from scripts import loadFromCSV as load
+    from scripts import loadDataFromIAESTESpreadsheet as load
     load.run()
     from playground.models import Offer
     offer_list = Offer.objects.all()
