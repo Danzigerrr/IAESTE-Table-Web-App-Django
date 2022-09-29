@@ -1,4 +1,4 @@
-from playground.models import Offer
+from iaesteTable.models import Offer
 import re
 
 
@@ -222,13 +222,51 @@ def getDataFromWebsite(url):
             currentOffer.FieldsOfStudy = currentOffer.FieldsOfStudy.split(",")
         # printCurrentOffer(currentOffer)
 
-
         allOffers.append(currentOffer)
 
     return allOffers
 
 
-def run():
+def splitSingleDisc(disc):
+    if '-' in disc:
+        disc = disc.split('-')[1].capitalize()
+    return disc
+
+
+def splitMultipleDisc(disc):
+    if ',' in disc:
+        splitted = disc.split(',')
+        newlist = ""
+        for s in splitted:
+            s = splitSingleDisc(s)
+            newlist = savingDiscToNewList(newlist, s, splitted)
+        disc = deleteLastComma(newlist)
+    return disc
+
+
+def deleteLastComma(newlist):
+    return newlist[:-3]  # deleting last comma from string
+
+
+def savingDiscToNewList(newlist, s, splitted):
+    newlist += str(s + ', \n').capitalize()
+    return newlist
+
+
+
+def adjustGenDiscipl(discipList):
+    newdiscList = []
+    for disc in discipList:
+        if disc == "OTHER":
+            disc = disc.capitalize()
+        else:
+            disc = splitMultipleDisc(disc)
+            disc = splitSingleDisc(disc)
+        newdiscList.append(disc)
+    return newdiscList
+
+
+def loadDataToDB():
     # url of spreasheet with IAESTE offers in Poland
     url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR6FjcG59djSQ_kWTfzDok-KPm_KtvwCKAz-J6h" \
           "-zUr_zTHb2m2AlHCDRNRGTUdMG19py_d4q0sMVQB/pubhtml?gid=1873904204&amp;single=true&amp;widget=true&amp" \
@@ -240,14 +278,15 @@ def run():
     Offer.objects.all().delete()  # clear DB
 
     for offerHTML in allOffersHTML:
-
+        offerHTML.GeneralDisciplines = adjustGenDiscipl(offerHTML.GeneralDisciplines)
         offer = Offer(RefNo=offerHTML.RefNo,
                       Deadline=offerHTML.Deadline,
-                      City=offerHTML.City,
+                      City=str(offerHTML.City).capitalize(),
                       Country=offerHTML.Country,
-                      GeneralDisciplines=(", ".join(offerHTML.GeneralDisciplines)), #  hiding brackets of list
-                      FieldsOfStudy=(", ".join(offerHTML.FieldsOfStudy)), #  hiding brackets of list
-                      RequiredKnowledgeAndExperiences=(", ".join(offerHTML.RequiredKnowledgeAndExperiences)).replace("*", "\n").replace("•", "\n"),
+                      GeneralDisciplines=(", ".join(offerHTML.GeneralDisciplines)),  # hiding brackets of list
+                      FieldsOfStudy=(", ".join(offerHTML.FieldsOfStudy)),  # hiding brackets of list
+                      RequiredKnowledgeAndExperiences=(", ".join(offerHTML.RequiredKnowledgeAndExperiences)).replace(
+                          "*", "\n").replace("•", "\n"),
                       OtherRequirements=(", ".join(offerHTML.OtherRequirements)),
                       CompletedYearsOfStudy=offerHTML.CompletedYearsOfStudy,
                       LanguageRequirements=offerHTML.LanguageRequirements,
@@ -273,4 +312,3 @@ def run():
 
                       )
         offer.save()
-

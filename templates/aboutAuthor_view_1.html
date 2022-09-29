@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <meta charset="UTF-8">
+    <title>Author page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/offersListStyles.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/verticalMenuStyles.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/authorFootnoteStyles.css' %}"/>
+    <script src="{% static 'JavaScript/JsScripts.js' %}"></script>
+    <script src="{% static 'JavaScript/staticElemAdder.js' %}"></script>
+
+
+</head>
+
+
+<body class="tableWithOffers" onload="updateDate(); addVerticalMenu(); addAuthorFootnote()">
+
+    <div class="pageTitleClass">
+        <div id="verticalMenuElement"></div>
+        <h2>Welcome to a webapp created by</h2>
+        <h1>Krzysztof Nazar</h1>
+        <h3>
+            Hi everyone!
+            <br>
+            I am a third-year student at the Gdańsk University of Technology.
+            <br>
+            My life goal is to constantly develop both my soft and hard skills.
+            <br>
+            Gaining knowledge about new technologies as well as creating strong relationships with people are the things I concentrate on the most.
+        </h3>
+
+        <br>
+        <h3>
+            Feel free to check my
+            <a style="color:white" href="https://github.com/KrzysztofNazar01" target="_blank">GitHub</a>
+        </h3>
+
+        <h3>
+            Or connect with me on
+            <a style="color:white" href="https://www.linkedin.com/in/krzysztof-nazar-550532219/" target="_blank">LinkedIn</a>
+        </h3>
+
+
+        <h3>
+            Or simply email me: krzysztof.nazar01@gmail.com
+        </h3>
+
+
+    </div>
+
+    <br>
+    <br>
+
+    <div id="authorFootnote"></div>
+
+</body>
+</html>

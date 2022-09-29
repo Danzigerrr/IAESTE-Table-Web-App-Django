@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <meta charset="UTF-8">
+    <title>Project page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/aboutProjectStyling.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/verticalMenuStyles.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/authorFootnoteStyles.css' %}"/>
+    <script src="{% static 'JavaScript/JsScripts.js' %}"></script>
+    <script src="{% static 'JavaScript/staticElemAdder.js' %}"></script>
+
+
+</head>
+
+
+<body class="tableWithOffers" onload="updateDate(); addVerticalMenu(); addAuthorFootnote()">
+
+
+    <div>
+        <ul>
+            <li><a href="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/offers">Offers list</a></li>
+            <li><a href="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/map" target="_blank">Offers map</a></li>
+            <li><a href="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/aboutProject" target="_blank">About project</a></li>
+            <li><a href="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/aboutAuthor" target="_blank">About author</a></li>
+        </ul>
+        
+    </div>
+    <div class="pageTitleClass">
+
+        <h1>
+            Welcome on page with IAESTE offers!
+        </h1>
+        <h4>
+            Data displayed on this page is downloaded from
+            <a style="color:black" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR6FjcG59djSQ_kWTfzDok-KPm_KtvwCKAz-J6h-zUr_zTHb2m2AlHCDRNRGTUdMG19py_d4q0sMVQB/pubhtml?gid=1873904204&amp;single=true&amp;widget=true&amp;headers=false" target="_blank">this spreadsheet</a>
+            shared by IAESTE Poland.
+
+        </h4>
+        <h4>
+            See the offers on the interactive map - click "Offers map" option from the menu on the left side.
+        </h4>
+    </div>
+
+        <br>
+        <br>
+    <div id="fromTheAuthor">
+
+        <h3>
+            From the author:
+        </h3>
+        <p>
+            When I heard about IAESTE, I wanted to check their website and see the offers they had. I found only two options.
+        </p>
+        <p>
+            The first one is to check PDFs - single PDF contains information about one offer and before opening the PDF the user knows only the Ref. number of the offer.
+        <p>
+        <p>
+            The second one is to use the spreadsheet mentioned above. It is unsealable and the only way to look for offers that might interest you is to use "ctrl+f" method.
+        </p>
+        <p>
+            Therefore, I created this project, because I wanted to make the searching process much more comfortable, faster and easier for the user.
+        </p>
+        <p>
+            This web application is built using the Django framework.
+        </p>
+
+    </div>
+
+
+    <br>
+    <br>
+
+    <div>
+        
+        
+    </div>
+
+</body>
+</html>

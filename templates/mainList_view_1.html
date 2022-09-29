@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <meta charset="UTF-8">
+    <title>IAESTE Offers - Poland</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/offersListStyles.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/verticalMenuStyles.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/authorFootnoteStyles.css' %}"/>
+    <script src="{% static 'JavaScript/JsScripts.js' %}"></script>
+    <script src="{% static 'JavaScript/staticElemAdder.js' %}"></script>
+
+
+</head>
+
+
+<body class="tableWithOffers" onload="updateDate(); addVerticalMenu(); addAuthorFootnote()">
+
+
+    <div class="pageTitleClass">
+        <div id="pageTitle">IAESTE OFFERS - POLAND</div>
+
+        <p id="current_date"> </p>
+
+        <div id="verticalMenuElement"></div>
+
+    </div>
+
+    <script>
+        function searchInColumn(n) {
+          // Declare variables
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("myInput" + n.toString());
+          filter = input.value.toUpperCase();
+          table = document.getElementById("tableWithOffers");
+          tr = table.getElementsByTagName("tr");
+
+          // Loop through all table rows, and hide those who don't match the search query
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[n]; // change this index if necessary --> index of column
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }
+          }
+        }
+    </script>
+
+    <!-- Offers list -->
+    <div id="TableOffers">
+        <table id="tableWithOffers">
+
+            <thead>
+                <tr>
+                    <th>
+                        Country <br>
+                        <input type="text" id="myInput0" onkeyup="searchInColumn(0)" placeholder="Filter" class="filterColumnInput"> <br>
+                        <button onclick="sortTable(0)" class="sortButton">Sort</button>
+                    </th>
+                    <th>
+                        City <br>
+                        <input type="text" id="myInput1" onkeyup="searchInColumn(1)" placeholder="Filter" class="filterColumnInput"> <br>
+                        <button onclick="sortTable(1)" class="sortButton">Sort</button>
+                    </th>
+                    <th>
+                        Deadline <br>
+                        <button onclick="sortTable(2)" class="sortButton">Sort</button>
+                    </th>
+                    <th>
+                        General disciplines <br>
+                        <input type="text" id="myInput3" onkeyup="searchInColumn(3)" placeholder="Filter" class="filterColumnInput">
+                        <button onclick="sortTable(3)" class="sortButton">Sort</button>
+                    </th>
+                    <th> Details </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for offer in offer_list %}
+                    <tr>
+                        <td class="Country">
+                            {{offer.Country}}
+                        </td>
+
+                        <td class="City">
+                            <a class="link" href="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/offers/{{offer.RefNo}}/city" target="_blank">
+                                {{offer.City}}
+                            </a>
+                        </td>
+
+                        <td class="Deadline">
+                            {{offer.Deadline}}
+                        </td>
+
+                        <td class="GeneralDisciplines">
+                            {{offer.GeneralDisciplines}}
+                        </td>
+
+                        <td class="tdDetails">
+                            <form action="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/offers/{{offer.RefNo}}" method="get" target="_blank">
+                                <button type="submit">See details</button>
+                            </form>
+                        </td>
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+
+    <br>
+    <br>
+
+    <div id="authorFootnote"></div>
+
+</body>
+</html>

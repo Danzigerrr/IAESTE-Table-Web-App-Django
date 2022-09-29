@@ -61,45 +61,38 @@ def setColorOfOffer(offerType):
 
 
 def popup_html(offerList, offerCount, city):
-    left_col_color = "#dfe6e3"
-    right_col_color = "#ffffff"
-
     rows = ""
     for offer in offerList:
         color = setColorOfOffer(offer.OfferType)
 
         row = "<tr>"
-        row += '<td style="background-color:' + color + ';"><span>' + offer.RefNo + '</span></td>'
-        row += '<td style="background-color:' + color + ';"><span>' + offer.OfferType + '</span></td>'
+        row += '<td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:' + color + ';"><span>' + offer.RefNo + '</span></td>'
+        row += '<td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:' + color + ';"><span>' + offer.OfferType + '</span></td>'
 
-        button = '<form action="http://127.0.0.1:8000/playground/hello/' + offer.RefNo + '" method="get" ' \
-                                                                                         'target="_blank"> <button ' \
-                                                                                         'type="submit">Details' \
-                                                                                         '</button> </form> '
+        button = '<form action="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/offers/' + \
+                 offer.RefNo + \
+                 '" method="get" target="_blank"> <button type="submit">Details </button> </form> '
 
-        row += '<td style = "width: 150px;background-color: ' + color + ';"> ' + button + '</td>'
+        row += '<td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: ' + color + ';"> ' + button + '</td>'
         row += "</tr>"
         rows += row
 
-    offersInfo = ""
-    if offerCount == 1:
-        offersInfo = "offer"
-    else:
-        offersInfo = "offers"
+    offersInfo = "offer"
+    if offerCount > 1:
+        offersInfo += "s"
 
     html = """<!DOCTYPE html>
         <html>
         <head>
-            <link rel="stylesheet" type="text/css" href="../static/css/mapStyles.css"/>
-            <h4 class="tableHeader"> """ + str(offerCount) + ' ' + offersInfo + ' in ' + city + """</h4>
+            <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> """ + str(offerCount) + ' ' + offersInfo + ' in ' + city + """</h4>
 
         </head>
-            <table id="popupTable" class="centerTable">
+            <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">
             <thead>
                   <tr>
-                    <th id="RefNoHeader">RefNo</th>
-                    <th id="OfferTypeHeader">Type</th>
-                    <th id="DetailsHeader">Details</th>
+                    <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>
+                    <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>
+                    <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>
                   </tr>
             </thead>
                 <tbody>
@@ -124,7 +117,7 @@ def countFrequenciesOfCities(allOffers):
 
 
 def createMapForMultipleOffers():
-    from playground.models import Offer
+    from iaesteTable.models import Offer
     allOffers = Offer.objects.all()
 
     cityFreq = countFrequenciesOfCities(allOffers)
