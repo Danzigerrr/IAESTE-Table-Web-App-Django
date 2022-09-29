@@ -1,4 +1,4 @@
-# IAESTETableFrontend
+# IAESTE Table analyzer - web application using Django framework
 
 Check this project running live with Heroku [here](https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/offers/).
 
