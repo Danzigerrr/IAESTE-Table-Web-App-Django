@@ -2,12 +2,13 @@
 
 Author: Krzysztof Nazar
 
-Check this project running live with Heroku [here](https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/offers/).
+Check this project running live with Heroku [here](https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/offers/) (use *ctrl + left mouse button* to open in a new tab).
+
 
 ## Description
-**The goal of this project was to deploy a web application displaying IAESTE Poland offers for international internships.**
+**The goal of this project was to deploy a web application displaying IAESTE Poland offers for international internships. I wanted to make the searching process much more comfortable, faster and easier for the user.**
 
-## IAESTE
+## IAESTE Association 
 
 "The International Association for the Exchange of Students for Technical Experience, Association sans but lucratif (non-profit association), commonly known as IAESTE A.s.b.l. is an association of national committees representing academic, industrial and student interests. We serve 3500+ students, 3000 employers and 1000 academic institutions through career-focused professional internships abroad, social and intercultural reception programmes, international networking and other career and employer branding activities in more than 80 countries worldwide."
 
@@ -45,3 +46,4 @@ The major steps in this project were:
 ## Future improvements
  - Add more responsive CSS
  - Add loading animations when the data is collected, and the user is waiting for displaying it
+
