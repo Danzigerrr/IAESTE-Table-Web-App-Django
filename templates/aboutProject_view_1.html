@@ -18,35 +18,49 @@
 <body class="tableWithOffers" onload="updateDate(); addVerticalMenu(); addAuthorFootnote()">
 
 
-    <div>
-        <ul>
-            <li><a href="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/offers">Offers list</a></li>
-            <li><a href="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/map" target="_blank">Offers map</a></li>
-            <li><a href="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/aboutProject" target="_blank">About project</a></li>
-            <li><a href="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/aboutAuthor" target="_blank">About author</a></li>
-        </ul>
-        
-    </div>
     <div class="pageTitleClass">
-
         <h1>
             Welcome on page with IAESTE offers!
         </h1>
+    </div>
+
+        <script>
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+    </script>
+    <div id="verticalMenuElement">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <div class="topnav" id="myTopnav">
+            <a href="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/offers">Offers list</a>
+            <a href="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/map" target="_blank">Offers map</a>
+            <a href="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/aboutProject" target="_blank">About project</a>
+            <a href="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/aboutAuthor" target="_blank">About author</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+          </a>
+        </div>
+
+    </div>
+
+        <br>
+    <div id="fromTheAuthor">
         <h4>
             Data displayed on this page is downloaded from
-            <a style="color:black" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR6FjcG59djSQ_kWTfzDok-KPm_KtvwCKAz-J6h-zUr_zTHb2m2AlHCDRNRGTUdMG19py_d4q0sMVQB/pubhtml?gid=1873904204&amp;single=true&amp;widget=true&amp;headers=false" target="_blank">this spreadsheet</a>
+            <a style="color:navajowhite" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR6FjcG59djSQ_kWTfzDok-KPm_KtvwCKAz-J6h-zUr_zTHb2m2AlHCDRNRGTUdMG19py_d4q0sMVQB/pubhtml?gid=1873904204&amp;single=true&amp;widget=true&amp;headers=false" target="_blank">this spreadsheet</a>
             shared by IAESTE Poland.
 
         </h4>
         <h4>
             See the offers on the interactive map - click "Offers map" option from the menu on the left side.
         </h4>
-    </div>
-
-        <br>
-        <br>
-    <div id="fromTheAuthor">
-
         <h3>
             From the author:
         </h3>
@@ -72,10 +86,8 @@
     <br>
     <br>
 
-    <div>
-        
-        
-    </div>
+
+
 
 </body>
 </html>

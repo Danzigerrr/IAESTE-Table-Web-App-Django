@@ -11,7 +11,6 @@
     <script src="{% static 'JavaScript/JsScripts.js' %}"></script>
     <script src="{% static 'JavaScript/staticElemAdder.js' %}"></script>
 
-
 </head>
 
 
@@ -22,11 +21,11 @@
         <div id="pageTitle">IAESTE OFFERS - POLAND</div>
 
         <p id="current_date"> </p>
-
-        <div id="verticalMenuElement"></div>
-
     </div>
 
+    <div id="verticalMenuElement"></div>
+
+<br>
     <script>
         function searchInColumn(n) {
           // Declare variables
@@ -50,6 +49,7 @@
           }
         }
     </script>
+
 
     <!-- Offers list -->
     <div id="TableOffers">
@@ -76,6 +76,10 @@
                         <input type="text" id="myInput3" onkeyup="searchInColumn(3)" placeholder="Filter" class="filterColumnInput">
                         <button onclick="sortTable(3)" class="sortButton">Sort</button>
                     </th>
+                    <th> Offer type <br>
+                        <input type="text" id="myInput4" onkeyup="searchInColumn(4)" placeholder="Filter" class="filterColumnInput">
+                        <button onclick="sortTable(4)" class="sortButton">Sort</button>
+                    </th>
                     <th> Details </th>
                 </tr>
             </thead>
@@ -99,6 +103,10 @@
 
                         <td class="GeneralDisciplines">
                             {{offer.GeneralDisciplines}}
+                        </td>
+
+                        <td class="OfferType">
+                            {{offer.OfferType}}
                         </td>
 
                         <td class="tdDetails">
