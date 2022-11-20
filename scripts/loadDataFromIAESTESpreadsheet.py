@@ -275,40 +275,65 @@ def loadDataToDB():
     # get data of all offers from spreadsheet
     allOffersHTML = getDataFromWebsite(url)
 
-    Offer.objects.all().delete()  # clear DB
+    # list to save active offer
+    activeOffersRefNumbers = []
 
+    # check all offers that are currently in the spreadsheet
     for offerHTML in allOffersHTML:
-        offerHTML.GeneralDisciplines = adjustGenDiscipl(offerHTML.GeneralDisciplines)
-        offer = Offer(RefNo=offerHTML.RefNo,
-                      Deadline=offerHTML.Deadline,
-                      City=str(offerHTML.City).capitalize(),
-                      Country=offerHTML.Country,
-                      GeneralDisciplines=(", ".join(offerHTML.GeneralDisciplines)),  # hiding brackets of list
-                      FieldsOfStudy=(", ".join(offerHTML.FieldsOfStudy)),  # hiding brackets of list
-                      RequiredKnowledgeAndExperiences=(", ".join(offerHTML.RequiredKnowledgeAndExperiences)).replace(
-                          "*", "\n").replace("•", "\n"),
-                      OtherRequirements=(", ".join(offerHTML.OtherRequirements)),
-                      CompletedYearsOfStudy=offerHTML.CompletedYearsOfStudy,
-                      LanguageRequirements=offerHTML.LanguageRequirements,
-                      WorkWeeksMin=offerHTML.WorkWeeksMin,
-                      WorkWeeksMax=offerHTML.WorkWeeksMax,
-                      From=offerHTML.From,
-                      To=offerHTML.To,
-                      AlternativeFrom=offerHTML.AlternativeFrom,
-                      AlternativeTo=offerHTML.AlternativeTo,
-                      CompanyClosedFrom=offerHTML.CompanyClosedFrom,
-                      CompanyClosedTo=offerHTML.CompanyClosedTo,
-                      WorkOfferedDescription=offerHTML.WorkOfferedDescription,
-                      GrossPay=offerHTML.GrossPay,
-                      WorkingHours=offerHTML.WorkingHours,
-                      Employer=offerHTML.Employer,
-                      Workplace=offerHTML.Workplace,
-                      Website=offerHTML.Website,
-                      LodgingBy=offerHTML.Lodgingby,
-                      LivingCost=offerHTML.LivingCost,
-                      EstCostOfLodging=offerHTML.EstCostofLodging,
-                      AdditionalInfo=offerHTML.AdditionalInfo,
-                      OfferType=offerHTML.OfferType,
+        # check if offer exists in the spreadsheet
+        addNewOfferToDB(offerHTML)
+        activeOffersRefNumbers.append(offerHTML.RefNo)
 
-                      )
-        offer.save()
+    # delete the offers that are no longer available in the spreadsheet, but still exist in the database
+    deleteInactiveOffersFromDB(activeOffersRefNumbers)
+
+
+def deleteInactiveOffersFromDB(activeOffersRefNumbers):
+    for refNo in activeOffersRefNumbers:
+        if refNo not in activeOffersRefNumbers:
+            print("deleting" + str(refNo))
+            Offer.objects.filter(RefNo=refNo).delete()
+
+
+def addNewOfferToDB(offerHTML):
+    if not Offer.objects.filter(
+            RefNo=offerHTML.RefNo).exists():  # if it already in the DB -> dont save it; just save the RefNo
+        print("saving" + str(offerHTML.RefNo))
+        saveOfferToDB(offerHTML)
+
+
+def saveOfferToDB(offerHTML):
+    offerHTML.GeneralDisciplines = adjustGenDiscipl(offerHTML.GeneralDisciplines)
+    offer = Offer(RefNo=offerHTML.RefNo,
+                  Deadline=offerHTML.Deadline,
+                  City=str(offerHTML.City).capitalize(),
+                  Country=offerHTML.Country,
+                  GeneralDisciplines=(", ".join(offerHTML.GeneralDisciplines)),  # hiding brackets of list
+                  FieldsOfStudy=(", ".join(offerHTML.FieldsOfStudy)),  # hiding brackets of list
+                  RequiredKnowledgeAndExperiences=(", ".join(offerHTML.RequiredKnowledgeAndExperiences)).replace(
+                      "*", "\n").replace("•", "\n"),
+                  OtherRequirements=(", ".join(offerHTML.OtherRequirements)),
+                  CompletedYearsOfStudy=offerHTML.CompletedYearsOfStudy,
+                  LanguageRequirements=offerHTML.LanguageRequirements,
+                  WorkWeeksMin=offerHTML.WorkWeeksMin,
+                  WorkWeeksMax=offerHTML.WorkWeeksMax,
+                  From=offerHTML.From,
+                  To=offerHTML.To,
+                  AlternativeFrom=offerHTML.AlternativeFrom,
+                  AlternativeTo=offerHTML.AlternativeTo,
+                  CompanyClosedFrom=offerHTML.CompanyClosedFrom,
+                  CompanyClosedTo=offerHTML.CompanyClosedTo,
+                  WorkOfferedDescription=offerHTML.WorkOfferedDescription,
+                  GrossPay=offerHTML.GrossPay,
+                  WorkingHours=offerHTML.WorkingHours,
+                  Employer=offerHTML.Employer,
+                  Workplace=offerHTML.Workplace,
+                  Website=offerHTML.Website,
+                  LodgingBy=offerHTML.Lodgingby,
+                  LivingCost=offerHTML.LivingCost,
+                  EstCostOfLodging=offerHTML.EstCostofLodging,
+                  AdditionalInfo=offerHTML.AdditionalInfo,
+                  OfferType=offerHTML.OfferType,
+
+                  )
+    offer.save()
