@@ -80,7 +80,7 @@ li a {
 
 /* Change the link color on hover */
 li a:hover {
-  background-color: #111;
+  background-color: #555;
   color: white;
 }
 
@@ -105,18 +105,35 @@ li a:hover {
 }
 
 
-
+li {
+  text-align: center;
+  border-bottom: 1px solid #555;
+}
 
 .pageTitleClass{
     text-align: center;
     color: navajowhite;
-    font-weight: bold;
+    font-weight:normal;
     font-family: "Arial Black", serif;
+        margin-right: 20%;
+    margin-left: 20%;
+
+    width: 60%;
 }
 #pageTitle{
     font-size: 4em;
     margin-top: 0.5em;
 }
 
+
+#fromTheAuthor {
+        text-align: center;
+    color: navajowhite;
+    font-weight:normal;
+    font-family: "Arial Black", serif;
+    margin-right: 20%;
+    margin-left: 20%;
+    width: 60%;
+}
 
 

@@ -22,6 +22,7 @@ table, th, td {
 
 #RefNoHeader{
     width:40%;
+    font-weight: bolder;
 }
 #DetailsHeader{
     width:40%;
@@ -31,9 +32,9 @@ table, th, td {
 }
 
 #RefNoHeader, #DetailsHeader,#OfferTypeHeader{
-    font-size: 1.4em;
+    font-size: 1.6em;
     text-align: center;
-    padding: 0.5em;
+    padding: 0.2em;
 }
 #popupTable{
     padding: 2%;

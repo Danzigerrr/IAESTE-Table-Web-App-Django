@@ -8,7 +8,7 @@ def mainList(request):
     from iaesteTable.models import Offer
     offer_list = Offer.objects.all()
 
-    return render(request, "mainList_view_1.html", {"offer_list": offer_list})
+    return render(request, "mainList_view_1.html", {"offer_list": offer_list, "offer_list_len": len(offer_list)})
 
 
 def findCityOfOfferWithId(RefNo):

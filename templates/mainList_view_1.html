@@ -11,6 +11,26 @@
     <script src="{% static 'JavaScript/JsScripts.js' %}"></script>
     <script src="{% static 'JavaScript/staticElemAdder.js' %}"></script>
 
+
+    <style>
+        table {
+    border-collapse:separate;
+    border:solid black 3px;
+    border-radius:3px;
+        }
+
+        td, th {
+            border-left:solid black 1px;
+            border-top:solid black 1px;
+        }
+
+
+        td:first-child, th:first-child {
+             border-left: none;
+        }
+
+    </style>
+
 </head>
 
 
@@ -21,6 +41,8 @@
         <div id="pageTitle">IAESTE OFFERS - POLAND</div>
 
         <p id="current_date"> </p>
+        
+        <p id="numbOfOffers"> Currently available {{offer_list_len}} offers.</p>
     </div>
 
     <div id="verticalMenuElement"></div>
