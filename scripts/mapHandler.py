@@ -19,6 +19,14 @@ def findGeocode(city):
 
 
 def getLatAndLong(cityName):
+    '''
+
+    :param cityName:
+    :return:
+        - latitude
+        - longitude
+        - if returned latitude and longitude equal 0, the city is not marked on the map
+    '''
     import numpy as np
     loc = findGeocode(cityName)
 
@@ -31,17 +39,19 @@ def getLatAndLong(cityName):
 def createMap(cityName):
     import folium
     latitude, longitude = getLatAndLong(cityName)
+
     # adjust position of view of the map
     my_map = folium.Map(
         location=[13, 16],
         zoom_start=2,
     )
 
-    # set marker for the offer
-    # html = popup_html(offer)
-    # popup = folium.Popup(folium.Html(html, script=True), max_width=500)
-    folium.Marker(location=[latitude, longitude],
-                  icon=folium.Icon(color='blue', icon='university', prefix='fa')).add_to(my_map)
+    if latitude != 0 and longitude != 0:
+        # set marker for the offer
+        # html = popup_html(offer)
+        # popup = folium.Popup(folium.Html(html, script=True), max_width=500)
+        folium.Marker(location=[latitude, longitude],
+                      icon=folium.Icon(color='blue', icon='university', prefix='fa')).add_to(my_map)
 
     return my_map
 
@@ -84,7 +94,8 @@ def popup_html(offerList, offerCount, city):
     html = """<!DOCTYPE html>
         <html>
         <head>
-            <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> """ + str(offerCount) + ' ' + offersInfo + ' in ' + city + """</h4>
+            <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> """ + str(
+        offerCount) + ' ' + offersInfo + ' in ' + city + """</h4>
 
         </head>
             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">
