@@ -14,6 +14,7 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="int.__setitem__" />
+          <option value="tuple.x" />
         </list>
       </option>
     </inspection_tool>
