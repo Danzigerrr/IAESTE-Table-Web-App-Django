@@ -2,7 +2,7 @@ from django.shortcuts import render
 from scripts.mapHandler import *
 from datetime import date
 import os
-import html
+
 
 def mainList(request):
     from scripts import loadDataFromIAESTESpreadsheet as load
@@ -32,12 +32,13 @@ def detail(request, RefNo):
     return render(request, "detail_view_1.html", {"offer": offer})
 
 
-def map(request):
+def getMap(request):
     currentDate = date.today()
     # currentDate = date(2022, 12, 10)  # debugging
     savingDirectory = 'generatedMaps/'
     filename = "map_with_offers_"
-
+    templateToDisplay = "map_view_1.html"
+    # templateToDisplay = "map_view_loading.html"
     # read current map
     res = []  # list to store files
     # Iterate directory
@@ -48,7 +49,7 @@ def map(request):
     # print(res)
     currentMapIsUpToDate = False
     if len(res) > 0:
-        if res[0] == "map_with_offers_" + str(currentDate) + ".html":
+        if res[0] == filename + str(currentDate) + ".html":
             currentMapIsUpToDate = True
 
     if currentMapIsUpToDate:
@@ -57,7 +58,7 @@ def map(request):
         filepath = savingDirectory + res[0]
         with open(filepath, 'r') as file:
             html_as_string = file.read().replace('\n', '')
-        return render(request, "map_view_1.html", {"map": html_as_string})
+        return render(request, templateToDisplay, {"mapOfOffers": html_as_string})
     else:
         # print('the date is different - deleting existing map')
         import shutil
@@ -72,10 +73,10 @@ def map(request):
                 print('Failed to delete %s. Reason: %s' % (file_path, e))
         # print("create new map")
         currentUrl = request.build_absolute_uri()
-        map = createMapForMultipleOffers(currentUrl)
-        map.save(savingDirectory + "map_with_offers_" + str(currentDate) + ".html")
-        html_string = map.get_root().render()
-        return render(request, "map_view_1.html", {"map": html_string})
+        mapFolium = createMapForMultipleOffers(currentUrl)
+        mapFolium.save(savingDirectory + filename + str(currentDate) + ".html")
+        html_string = mapFolium.get_root().render()
+        return render(request, templateToDisplay, {"mapOfOffers": html_string})
 
 
 def aboutProject(request):

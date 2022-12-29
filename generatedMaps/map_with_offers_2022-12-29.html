@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_95f43cb3ac44f22a68dfb583a537348c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_95f43cb3ac44f22a68dfb583a537348c" ></div>
+        
+</body>
+<script>    
+    
+            var map_95f43cb3ac44f22a68dfb583a537348c = L.map(
+                "map_95f43cb3ac44f22a68dfb583a537348c",
+                {
+                    center: [13.0, 16.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 2,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6810510d0217baa6f98517b078d016fb = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var marker_4f6b71b39c0b301e64d138695caaf637 = L.marker(
+                [47.5490251, 1.7324062],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_263382e2888cdb13b4009d6e1c5a5a56 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_4f6b71b39c0b301e64d138695caaf637.setIcon(icon_263382e2888cdb13b4009d6e1c5a5a56);
+        
+    
+        var popup_049473fb20b11f48985415bc7ee64b82 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_522924ca3cf6f6a249bcbd90e0aa82d0 = $(`<div id="html_522924ca3cf6f6a249bcbd90e0aa82d0" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 6 offers in Centro</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>BR-2023-110-ENI</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/BR-2023-110-ENI" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr><tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>BR-2023-101-ENI</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/BR-2023-101-ENI" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr><tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>BR-2023-102-ENI</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/BR-2023-102-ENI" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr><tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>BR-2023-105-ENI</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/BR-2023-105-ENI" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr><tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>BR-2023-107-ENI</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/BR-2023-107-ENI" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr><tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>BR-2023-109-ENI</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/BR-2023-109-ENI" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_049473fb20b11f48985415bc7ee64b82.setContent(html_522924ca3cf6f6a249bcbd90e0aa82d0);
+        
+
+        marker_4f6b71b39c0b301e64d138695caaf637.bindPopup(popup_049473fb20b11f48985415bc7ee64b82)
+        ;
+
+        
+    
+    
+            var marker_e74cbeff76a5d69bd8379a32cd446591 = L.marker(
+                [-23.5003451, -47.4582864],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_98458feb2f392f8b3699fce241c8c9f9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_e74cbeff76a5d69bd8379a32cd446591.setIcon(icon_98458feb2f392f8b3699fce241c8c9f9);
+        
+    
+        var popup_c5e67e1e2fc7ed5b0b4f6ea8a0d0d8b6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_93a7b08bb46c9e3692a537b0616c9bc4 = $(`<div id="html_93a7b08bb46c9e3692a537b0616c9bc4" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Sorocaba</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>BR-2023-131-FAC</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/BR-2023-131-FAC" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_c5e67e1e2fc7ed5b0b4f6ea8a0d0d8b6.setContent(html_93a7b08bb46c9e3692a537b0616c9bc4);
+        
+
+        marker_e74cbeff76a5d69bd8379a32cd446591.bindPopup(popup_c5e67e1e2fc7ed5b0b4f6ea8a0d0d8b6)
+        ;
+
+        
+    
+    
+            var marker_ed88b6e76c5eacc1d1040ceda34f9d94 = L.marker(
+                [-22.6620892, -50.420623],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_c12aae617859561c21593091ad8b991e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_ed88b6e76c5eacc1d1040ceda34f9d94.setIcon(icon_c12aae617859561c21593091ad8b991e);
+        
+    
+        var popup_9ade09b6ee16160767891c3fcafcd684 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_27a7552642d12b4c4a8dd3aa591b3e59 = $(`<div id="html_27a7552642d12b4c4a8dd3aa591b3e59" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Assis</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>BR-2023-143-FEMA</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/BR-2023-143-FEMA" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_9ade09b6ee16160767891c3fcafcd684.setContent(html_27a7552642d12b4c4a8dd3aa591b3e59);
+        
+
+        marker_ed88b6e76c5eacc1d1040ceda34f9d94.bindPopup(popup_9ade09b6ee16160767891c3fcafcd684)
+        ;
+
+        
+    
+    
+            var marker_de251d9b67df72505e80628b956225a0 = L.marker(
+                [52.131802, -106.660767],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_7d7785eca25c174f07297b65e1b7021e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_de251d9b67df72505e80628b956225a0.setIcon(icon_7d7785eca25c174f07297b65e1b7021e);
+        
+    
+        var popup_2e2dd6319c6a1dcd13911fa03274d708 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f9ca87fee7939d918e526059931e1f3c = $(`<div id="html_f9ca87fee7939d918e526059931e1f3c" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Saskatoon</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>CA-2023-000016</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/CA-2023-000016" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_2e2dd6319c6a1dcd13911fa03274d708.setContent(html_f9ca87fee7939d918e526059931e1f3c);
+        
+
+        marker_de251d9b67df72505e80628b956225a0.bindPopup(popup_2e2dd6319c6a1dcd13911fa03274d708)
+        ;
+
+        
+    
+    
+            var marker_5a96d704c3fa13962dcba4675788aa32 = L.marker(
+                [47.3744489, 8.5410422],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_98bc79a29b1918dbea020be2a33ffab8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_5a96d704c3fa13962dcba4675788aa32.setIcon(icon_98bc79a29b1918dbea020be2a33ffab8);
+        
+    
+        var popup_7d1e4f1098fe43ae5c5cce8bb7d5a044 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_adc0096aceb3eabd550ea63754804f0f = $(`<div id="html_adc0096aceb3eabd550ea63754804f0f" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 2 offers in Zurich</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>CH-2023-000200</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/CH-2023-000200" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr><tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>CH-2023-000241</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/CH-2023-000241" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_7d1e4f1098fe43ae5c5cce8bb7d5a044.setContent(html_adc0096aceb3eabd550ea63754804f0f);
+        
+
+        marker_5a96d704c3fa13962dcba4675788aa32.bindPopup(popup_7d1e4f1098fe43ae5c5cce8bb7d5a044)
+        ;
+
+        
+    
+    
+            var marker_c43ae47997c488c967fa71922677b773 = L.marker(
+                [47.4537333, 8.2849682],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_2933fa2191148456378f2bda4c07c4a6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_c43ae47997c488c967fa71922677b773.setIcon(icon_2933fa2191148456378f2bda4c07c4a6);
+        
+    
+        var popup_0ac1543fa37b976a799e424258ba8c82 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f0c242f2317b86e494ff9aafb83d123b = $(`<div id="html_f0c242f2317b86e494ff9aafb83d123b" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Baden-dättwil</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>CH-2023-000232</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/CH-2023-000232" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_0ac1543fa37b976a799e424258ba8c82.setContent(html_f0c242f2317b86e494ff9aafb83d123b);
+        
+
+        marker_c43ae47997c488c967fa71922677b773.bindPopup(popup_0ac1543fa37b976a799e424258ba8c82)
+        ;
+
+        
+    
+    
+            var marker_cd615eb9106496b2233de3345939815d = L.marker(
+                [47.070535, 8.368244],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_7f78f7e5b74d7b277ff8f74ecc7e6fe9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_cd615eb9106496b2233de3345939815d.setIcon(icon_7f78f7e5b74d7b277ff8f74ecc7e6fe9);
+        
+    
+        var popup_89bcf5a61aa61e73328c49f5f69db1b6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3f79a4393ed15b7f7efb451449d721a5 = $(`<div id="html_3f79a4393ed15b7f7efb451449d721a5" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Adligenswil</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>CH-2023-000234</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/CH-2023-000234" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_89bcf5a61aa61e73328c49f5f69db1b6.setContent(html_3f79a4393ed15b7f7efb451449d721a5);
+        
+
+        marker_cd615eb9106496b2233de3345939815d.bindPopup(popup_89bcf5a61aa61e73328c49f5f69db1b6)
+        ;
+
+        
+    
+    
+            var marker_a79d55174f825210bb45e247d4e00777 = L.marker(
+                [46.2017559, 6.1466014],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_a70ff2656c4a217df94409f0f48f4601 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_a79d55174f825210bb45e247d4e00777.setIcon(icon_a70ff2656c4a217df94409f0f48f4601);
+        
+    
+        var popup_db73652af9b475dd80e5f684865c2b76 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d77345d658d88a4b7cc5af2f4041a46a = $(`<div id="html_d77345d658d88a4b7cc5af2f4041a46a" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Genève</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>CH-2023-000242</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/CH-2023-000242" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_db73652af9b475dd80e5f684865c2b76.setContent(html_d77345d658d88a4b7cc5af2f4041a46a);
+        
+
+        marker_a79d55174f825210bb45e247d4e00777.bindPopup(popup_db73652af9b475dd80e5f684865c2b76)
+        ;
+
+        
+    
+    
+            var marker_fe75e5e2d3780d8039747bf44526754f = L.marker(
+                [47.3968244, 8.6183023],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_78c2f030b408a38e3b25679b84878d56 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_fe75e5e2d3780d8039747bf44526754f.setIcon(icon_78c2f030b408a38e3b25679b84878d56);
+        
+    
+        var popup_18229e291ba5eb48e0973076bda1b7ea = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7b4e9b5300f7dac042a7a3a1e3e177bc = $(`<div id="html_7b4e9b5300f7dac042a7a3a1e3e177bc" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Dübendorf</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>CH-2023-000244</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/CH-2023-000244" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_18229e291ba5eb48e0973076bda1b7ea.setContent(html_7b4e9b5300f7dac042a7a3a1e3e177bc);
+        
+
+        marker_fe75e5e2d3780d8039747bf44526754f.bindPopup(popup_18229e291ba5eb48e0973076bda1b7ea)
+        ;
+
+        
+    
+    
+            var marker_b145f646998a92d357330866fcce1e3e = L.marker(
+                [47.3226925, 8.7980939],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_edeafc6b315eff2d916d295fa7868a23 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_b145f646998a92d357330866fcce1e3e.setIcon(icon_edeafc6b315eff2d916d295fa7868a23);
+        
+    
+        var popup_9f758cf77e14603edbcf558675c8586b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_402df5216a9c9a9bbed7851979a91ff6 = $(`<div id="html_402df5216a9c9a9bbed7851979a91ff6" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Wetzikon</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>CH-2023-000245</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/CH-2023-000245" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_9f758cf77e14603edbcf558675c8586b.setContent(html_402df5216a9c9a9bbed7851979a91ff6);
+        
+
+        marker_b145f646998a92d357330866fcce1e3e.bindPopup(popup_9f758cf77e14603edbcf558675c8586b)
+        ;
+
+        
+    
+    
+            var marker_841db6c7e780962e7327b2894378e6ad = L.marker(
+                [47.550753, 9.6926624],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_9bf4699b6b9e82cd69554f7572271cbd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_841db6c7e780962e7327b2894378e6ad.setIcon(icon_9bf4699b6b9e82cd69554f7572271cbd);
+        
+    
+        var popup_afaa26904d32a70f9444afc49ad1725d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a34941b1d843abdae7a20dacd73e81e4 = $(`<div id="html_a34941b1d843abdae7a20dacd73e81e4" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Lindau</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>CH-2023-000246</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/CH-2023-000246" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_afaa26904d32a70f9444afc49ad1725d.setContent(html_a34941b1d843abdae7a20dacd73e81e4);
+        
+
+        marker_841db6c7e780962e7327b2894378e6ad.bindPopup(popup_afaa26904d32a70f9444afc49ad1725d)
+        ;
+
+        
+    
+    
+            var marker_68b2814750ae84d987e206babf4768c6 = L.marker(
+                [47.3225316, 8.5459483],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_b04bd5d6736dc21f41784b6001f5ff76 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_68b2814750ae84d987e206babf4768c6.setIcon(icon_b04bd5d6736dc21f41784b6001f5ff76);
+        
+    
+        var popup_a31ffe3cdd8b59bbc58bf71ff4be3364 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_51d3b8d510070f8fa864e734939a9186 = $(`<div id="html_51d3b8d510070f8fa864e734939a9186" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Kilchberg</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>CH-2023-000247</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/CH-2023-000247" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_a31ffe3cdd8b59bbc58bf71ff4be3364.setContent(html_51d3b8d510070f8fa864e734939a9186);
+        
+
+        marker_68b2814750ae84d987e206babf4768c6.bindPopup(popup_a31ffe3cdd8b59bbc58bf71ff4be3364)
+        ;
+
+        
+    
+    
+            var marker_9c7dd13ecdd6d3ebae1a9e70092abce9 = L.marker(
+                [47.2250438, 8.2632119],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_cda1a171451bdf00263b8e3555a7010d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_9c7dd13ecdd6d3ebae1a9e70092abce9.setIcon(icon_cda1a171451bdf00263b8e3555a7010d);
+        
+    
+        var popup_f5fac2d44e9a3f88a6fe7b5b5ae05fe0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5df493dfd6de7c5e3707972c39d99ba8 = $(`<div id="html_5df493dfd6de7c5e3707972c39d99ba8" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Hitzkirch</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>CH-2023-000250</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/CH-2023-000250" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_f5fac2d44e9a3f88a6fe7b5b5ae05fe0.setContent(html_5df493dfd6de7c5e3707972c39d99ba8);
+        
+
+        marker_9c7dd13ecdd6d3ebae1a9e70092abce9.bindPopup(popup_f5fac2d44e9a3f88a6fe7b5b5ae05fe0)
+        ;
+
+        
+    
+    
+            var marker_4f98e823eb45178f0ba9449736def9f3 = L.marker(
+                [47.4182444, 8.3640342],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_ac0fc7e1805f99727cc573a0149d1252 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_4f98e823eb45178f0ba9449736def9f3.setIcon(icon_ac0fc7e1805f99727cc573a0149d1252);
+        
+    
+        var popup_604c00a904dc3fdc6697cbfe8159732d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_18f88efd2b1c6a92baeae5672554df64 = $(`<div id="html_18f88efd2b1c6a92baeae5672554df64" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Spreitenbach</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>CH-2023-000251</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/CH-2023-000251" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_604c00a904dc3fdc6697cbfe8159732d.setContent(html_18f88efd2b1c6a92baeae5672554df64);
+        
+
+        marker_4f98e823eb45178f0ba9449736def9f3.bindPopup(popup_604c00a904dc3fdc6697cbfe8159732d)
+        ;
+
+        
+    
+    
+            var marker_9185bded2967dc0b88746d8798e4784d = L.marker(
+                [47.5581077, 7.5878261],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_2ec31692cd412615e44102aebfeb611f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_9185bded2967dc0b88746d8798e4784d.setIcon(icon_2ec31692cd412615e44102aebfeb611f);
+        
+    
+        var popup_6d75aaf19befb042e85d0f501d660c2c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4daa804090b072690c0694e4c0767a81 = $(`<div id="html_4daa804090b072690c0694e4c0767a81" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Basel</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>CH-2023-000252</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/CH-2023-000252" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_6d75aaf19befb042e85d0f501d660c2c.setContent(html_4daa804090b072690c0694e4c0767a81);
+        
+
+        marker_9185bded2967dc0b88746d8798e4784d.bindPopup(popup_6d75aaf19befb042e85d0f501d660c2c)
+        ;
+
+        
+    
+    
+            var marker_5f8ac0777df4658fc697a5f02883d6f7 = L.marker(
+                [48.1371079, 11.5753822],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_dc6683cb1269b0ae1fd30023f108e332 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_5f8ac0777df4658fc697a5f02883d6f7.setIcon(icon_dc6683cb1269b0ae1fd30023f108e332);
+        
+    
+        var popup_2996e9028123e217b9ea9a4fcbe28450 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a675597671bb8e21d7d284e59b03d391 = $(`<div id="html_a675597671bb8e21d7d284e59b03d391" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 2 offers in München</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#fdfa5a;"><span>DE-2023-1006-1</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#fdfa5a;"><span>FCFS</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #fdfa5a;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/DE-2023-1006-1" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr><tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#fdfa5a;"><span>DE-2023-1006-2</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#fdfa5a;"><span>FCFS</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #fdfa5a;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/DE-2023-1006-2" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_2996e9028123e217b9ea9a4fcbe28450.setContent(html_a675597671bb8e21d7d284e59b03d391);
+        
+
+        marker_5f8ac0777df4658fc697a5f02883d6f7.bindPopup(popup_2996e9028123e217b9ea9a4fcbe28450)
+        ;
+
+        
+    
+    
+            var marker_b35a458b1a984325f83f806ff159c467 = L.marker(
+                [54.095791, 13.3815238],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_68aaeae815336a394dd4ce084ea1f03f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_b35a458b1a984325f83f806ff159c467.setIcon(icon_68aaeae815336a394dd4ce084ea1f03f);
+        
+    
+        var popup_9d2f4d0c8b991043731358d24b9d63de = L.popup({"maxWidth": "100%"});
+
+        
+            var html_baab817d9e3da7ca8a9272f2b75528e5 = $(`<div id="html_baab817d9e3da7ca8a9272f2b75528e5" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Greifswald</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#fdfa5a;"><span>DE-2023-1042-1</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#fdfa5a;"><span>FCFS</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #fdfa5a;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/DE-2023-1042-1" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_9d2f4d0c8b991043731358d24b9d63de.setContent(html_baab817d9e3da7ca8a9272f2b75528e5);
+        
+
+        marker_b35a458b1a984325f83f806ff159c467.bindPopup(popup_9d2f4d0c8b991043731358d24b9d63de)
+        ;
+
+        
+    
+    
+            var marker_a42872f5dd0cadcc8c3e05493cce173d = L.marker(
+                [53.550341, 10.000654],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_1362db0b04e9f80f0c84e29f27ac0379 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_a42872f5dd0cadcc8c3e05493cce173d.setIcon(icon_1362db0b04e9f80f0c84e29f27ac0379);
+        
+    
+        var popup_5b48004ea38e705efd1b3298f36cb684 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_086ca1d0369b2a63737f4d456ba5395e = $(`<div id="html_086ca1d0369b2a63737f4d456ba5395e" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Hamburg</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#fdfa5a;"><span>DE-2023-2010-2</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#fdfa5a;"><span>FCFS</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #fdfa5a;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/DE-2023-2010-2" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_5b48004ea38e705efd1b3298f36cb684.setContent(html_086ca1d0369b2a63737f4d456ba5395e);
+        
+
+        marker_a42872f5dd0cadcc8c3e05493cce173d.bindPopup(popup_5b48004ea38e705efd1b3298f36cb684)
+        ;
+
+        
+    
+    
+            var marker_600cdd262897ae23bca436a5eae27a7c = L.marker(
+                [52.5037484, 14.1404688],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_ba13a188d9b5fdb2f712d697918d7934 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_600cdd262897ae23bca436a5eae27a7c.setIcon(icon_ba13a188d9b5fdb2f712d697918d7934);
+        
+    
+        var popup_ded380ca6af1a0507a6a66c0fd8bdc26 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0d643f353c24e4d8f5001123e8ad3208 = $(`<div id="html_0d643f353c24e4d8f5001123e8ad3208" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 2 offers in Müncheberg</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#fdfa5a;"><span>DE-2023-2068-1</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#fdfa5a;"><span>FCFS</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #fdfa5a;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/DE-2023-2068-1" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr><tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#fdfa5a;"><span>DE-2023-2068-2</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#fdfa5a;"><span>FCFS</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #fdfa5a;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/DE-2023-2068-2" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_ded380ca6af1a0507a6a66c0fd8bdc26.setContent(html_0d643f353c24e4d8f5001123e8ad3208);
+        
+
+        marker_600cdd262897ae23bca436a5eae27a7c.bindPopup(popup_ded380ca6af1a0507a6a66c0fd8bdc26)
+        ;
+
+        
+    
+    
+            var marker_dfb4fe5703521f3ed0cdd6cf7c2626bb = L.marker(
+                [38.3436365, -0.4881708],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_b6d61ae69017fb32f5c61ada2f96387a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_dfb4fe5703521f3ed0cdd6cf7c2626bb.setIcon(icon_b6d61ae69017fb32f5c61ada2f96387a);
+        
+    
+        var popup_a3d222061ddc68c8d031ef8f9102b323 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f1f0aa661820afab2e777ff4bc70495c = $(`<div id="html_f1f0aa661820afab2e777ff4bc70495c" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Alicante</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>ES-2023-008FOSI</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/ES-2023-008FOSI" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_a3d222061ddc68c8d031ef8f9102b323.setContent(html_f1f0aa661820afab2e777ff4bc70495c);
+        
+
+        marker_dfb4fe5703521f3ed0cdd6cf7c2626bb.bindPopup(popup_a3d222061ddc68c8d031ef8f9102b323)
+        ;
+
+        
+    
+    
+            var marker_9672d72e22e43f40096b83900e8db690 = L.marker(
+                [40.4167047, -3.7035825],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_9f24a468638401b8f35e222dfe205c7d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_9672d72e22e43f40096b83900e8db690.setIcon(icon_9f24a468638401b8f35e222dfe205c7d);
+        
+    
+        var popup_92795cfe78100d86c0afd9702fc46b63 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_497d74384e037ba16c13b598a2678df8 = $(`<div id="html_497d74384e037ba16c13b598a2678df8" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Madrid</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>ES-2023-5100</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/ES-2023-5100" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_92795cfe78100d86c0afd9702fc46b63.setContent(html_497d74384e037ba16c13b598a2678df8);
+        
+
+        marker_9672d72e22e43f40096b83900e8db690.bindPopup(popup_92795cfe78100d86c0afd9702fc46b63)
+        ;
+
+        
+    
+    
+            var marker_29e67f74ac24ef4833887ca8374854f9 = L.marker(
+                [41.6521342, -0.8809428],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_90b050fa0e01dd258ca34308554a09d2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_29e67f74ac24ef4833887ca8374854f9.setIcon(icon_90b050fa0e01dd258ca34308554a09d2);
+        
+    
+        var popup_26a80552991a0f108a595006497e8959 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_609477a4d8e5e81b5f9bd6437d5469d0 = $(`<div id="html_609477a4d8e5e81b5f9bd6437d5469d0" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Zaragoza</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>ES-2023-9475</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/ES-2023-9475" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_26a80552991a0f108a595006497e8959.setContent(html_609477a4d8e5e81b5f9bd6437d5469d0);
+        
+
+        marker_29e67f74ac24ef4833887ca8374854f9.bindPopup(popup_26a80552991a0f108a595006497e8959)
+        ;
+
+        
+    
+    
+            var marker_5236f43d247ed20078a1f67898b4f0ca = L.marker(
+                [11.0018115, 76.9628425],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_39b9f5813a3a48a09ec741cd9a5caa41 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_5236f43d247ed20078a1f67898b4f0ca.setIcon(icon_39b9f5813a3a48a09ec741cd9a5caa41);
+        
+    
+        var popup_cf310322d10860d5b67568981f3a4000 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_302be254382148782edb1b21f8b3093c = $(`<div id="html_302be254382148782edb1b21f8b3093c" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 4 offers in Coimbatore</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>IN-2023-B1401-KU</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/IN-2023-B1401-KU" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr><tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>IN-2023-B1402-KU</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/IN-2023-B1402-KU" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr><tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>IN-2023-B1406-KU</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/IN-2023-B1406-KU" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr><tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>IN-2023-B1407-KU</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/IN-2023-B1407-KU" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_cf310322d10860d5b67568981f3a4000.setContent(html_302be254382148782edb1b21f8b3093c);
+        
+
+        marker_5236f43d247ed20078a1f67898b4f0ca.bindPopup(popup_cf310322d10860d5b67568981f3a4000)
+        ;
+
+        
+    
+    
+            var marker_813173b514e20920ff98a3c926afe308 = L.marker(
+                [13.3519723, 74.7870308],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_431d1c606ae61e601284aa227facbb7e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_813173b514e20920ff98a3c926afe308.setIcon(icon_431d1c606ae61e601284aa227facbb7e);
+        
+    
+        var popup_ae375d34fa7b94e31974832b12f916a8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f5b8c344445d1c319dd847731772e24b = $(`<div id="html_f5b8c344445d1c319dd847731772e24b" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 4 offers in Manipal</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>IN-2023-C1104-MU</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/IN-2023-C1104-MU" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr><tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>IN-2023-C1301-MU</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/IN-2023-C1301-MU" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr><tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>IN-2023-C1302-MU</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/IN-2023-C1302-MU" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr><tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>IN-2023-C1303-MU</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/IN-2023-C1303-MU" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_ae375d34fa7b94e31974832b12f916a8.setContent(html_f5b8c344445d1c319dd847731772e24b);
+        
+
+        marker_813173b514e20920ff98a3c926afe308.bindPopup(popup_ae375d34fa7b94e31974832b12f916a8)
+        ;
+
+        
+    
+    
+            var marker_8260583da038df198b66ecb7cfb7159f = L.marker(
+                [26.9154576, 75.8189817],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_aca6f935a37ef54d6e4f93c34c8ca8cb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_8260583da038df198b66ecb7cfb7159f.setIcon(icon_aca6f935a37ef54d6e4f93c34c8ca8cb);
+        
+    
+        var popup_845c9f3638ee264cc2e80bd3f47de1a3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b524d557a5950d886906adcdc5576f56 = $(`<div id="html_b524d557a5950d886906adcdc5576f56" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 4 offers in Jaipur</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>IN-2023-D2602-MJ</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/IN-2023-D2602-MJ" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr><tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>IN-2023-D4003-MJ</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/IN-2023-D4003-MJ" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr><tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>IN-2023-D4004-MJ</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/IN-2023-D4004-MJ" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr><tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>IN-2023-D5201-MJ</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/IN-2023-D5201-MJ" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_845c9f3638ee264cc2e80bd3f47de1a3.setContent(html_b524d557a5950d886906adcdc5576f56);
+        
+
+        marker_8260583da038df198b66ecb7cfb7159f.bindPopup(popup_845c9f3638ee264cc2e80bd3f47de1a3)
+        ;
+
+        
+    
+    
+            var marker_61b3aae819b8696504f13c5a541b908f = L.marker(
+                [27.708317, 85.3205817],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_6385ae2c56d3f79cfb35a889c4ec684e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_61b3aae819b8696504f13c5a541b908f.setIcon(icon_6385ae2c56d3f79cfb35a889c4ec684e);
+        
+    
+        var popup_05ca4aaeb1934dd905affb92a5e35787 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_dad4ffa9d3ff4e9062587ba53a9d4395 = $(`<div id="html_dad4ffa9d3ff4e9062587ba53a9d4395" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Kathmandu</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#fdfa5a;"><span>NP-2023-01</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#fdfa5a;"><span>FCFS</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #fdfa5a;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/NP-2023-01" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_05ca4aaeb1934dd905affb92a5e35787.setContent(html_dad4ffa9d3ff4e9062587ba53a9d4395);
+        
+
+        marker_61b3aae819b8696504f13c5a541b908f.bindPopup(popup_05ca4aaeb1934dd905affb92a5e35787)
+        ;
+
+        
+    
+    
+            var marker_bf4cf04ad6147d7e5465be1bb5a8a71c = L.marker(
+                [33.8439408, 9.400138],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_ee31592b600b326c3673f8dacd2a5440 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_bf4cf04ad6147d7e5465be1bb5a8a71c.setIcon(icon_ee31592b600b326c3673f8dacd2a5440);
+        
+    
+        var popup_c02660ef4843f2f755b536e3a2c3d8de = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0fee855501502a7cd27eda72a52693e0 = $(`<div id="html_0fee855501502a7cd27eda72a52693e0" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Tunis</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>TN-2023-8036-IE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/TN-2023-8036-IE" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_c02660ef4843f2f755b536e3a2c3d8de.setContent(html_0fee855501502a7cd27eda72a52693e0);
+        
+
+        marker_bf4cf04ad6147d7e5465be1bb5a8a71c.bindPopup(popup_c02660ef4843f2f755b536e3a2c3d8de)
+        ;
+
+        
+    
+    
+            var marker_a78e8df704b8fdb2ecf7245963dc93cc = L.marker(
+                [48.2083537, 16.3725042],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_4f681b3c20b066a590012c2818b74777 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_a78e8df704b8fdb2ecf7245963dc93cc.setIcon(icon_4f681b3c20b066a590012c2818b74777);
+        
+    
+        var popup_f85414e8474931d6df72e637033e3baf = L.popup({"maxWidth": "100%"});
+
+        
+            var html_adbe48b1f14101d0fba237db5ea7180b = $(`<div id="html_adbe48b1f14101d0fba237db5ea7180b" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 2 offers in Vienna</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>AT-2023-6006VI</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/AT-2023-6006VI" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr><tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>AT-2023-6007VI</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/AT-2023-6007VI" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_f85414e8474931d6df72e637033e3baf.setContent(html_adbe48b1f14101d0fba237db5ea7180b);
+        
+
+        marker_a78e8df704b8fdb2ecf7245963dc93cc.bindPopup(popup_f85414e8474931d6df72e637033e3baf)
+        ;
+
+        
+    
+    
+            var marker_dfbfe95181a8a200a3dc81bf5a94b5e2 = L.marker(
+                [-5.3462821, -49.1007401],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_08cf80392b26cc80e0f472157e338ee1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_dfbfe95181a8a200a3dc81bf5a94b5e2.setIcon(icon_08cf80392b26cc80e0f472157e338ee1);
+        
+    
+        var popup_6910b35bd3cff2064fe551dde2af171c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_06de55a1a456acb96c8cd41d4fa0ff7b = $(`<div id="html_06de55a1a456acb96c8cd41d4fa0ff7b" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Marabá</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>BR-2023-051-SPA</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/BR-2023-051-SPA" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_6910b35bd3cff2064fe551dde2af171c.setContent(html_06de55a1a456acb96c8cd41d4fa0ff7b);
+        
+
+        marker_dfbfe95181a8a200a3dc81bf5a94b5e2.bindPopup(popup_6910b35bd3cff2064fe551dde2af171c)
+        ;
+
+        
+    
+    
+            var marker_fca5ddc45973306483be6b67f68061f3 = L.marker(
+                [31.3941887, -91.6714379],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_a255095830d290e111fb94a64ad9b4ec = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_fca5ddc45973306483be6b67f68061f3.setIcon(icon_a255095830d290e111fb94a64ad9b4ec);
+        
+    
+        var popup_23496138055421b077a77028f30bbeee = L.popup({"maxWidth": "100%"});
+
+        
+            var html_47edf5c19aab7abf131a54f7d4bb35fb = $(`<div id="html_47edf5c19aab7abf131a54f7d4bb35fb" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Concordia</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>BR-2023-052-COO</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/BR-2023-052-COO" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_23496138055421b077a77028f30bbeee.setContent(html_47edf5c19aab7abf131a54f7d4bb35fb);
+        
+
+        marker_fca5ddc45973306483be6b67f68061f3.bindPopup(popup_23496138055421b077a77028f30bbeee)
+        ;
+
+        
+    
+    
+            var marker_7bc1c0845ba18145091bb12e42d01b23 = L.marker(
+                [-8.0584933, -34.8848193],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_f42d7f57709d07997d2e4c9cdc1992c5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_7bc1c0845ba18145091bb12e42d01b23.setIcon(icon_f42d7f57709d07997d2e4c9cdc1992c5);
+        
+    
+        var popup_1df76e58a0c1412a1c2c85fcab451a03 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ac3805a480ce18e4e7a0c98a07bac1d4 = $(`<div id="html_ac3805a480ce18e4e7a0c98a07bac1d4" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Recife</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>BR-2023-061-CES</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/BR-2023-061-CES" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_1df76e58a0c1412a1c2c85fcab451a03.setContent(html_ac3805a480ce18e4e7a0c98a07bac1d4);
+        
+
+        marker_7bc1c0845ba18145091bb12e42d01b23.bindPopup(popup_1df76e58a0c1412a1c2c85fcab451a03)
+        ;
+
+        
+    
+    
+            var marker_4b1fd3ef1b5beea63229a0184c965cdf = L.marker(
+                [39.6699383, -0.22537531804548736],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_4d7f655796aeae09e43f3ec06326aede = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_4b1fd3ef1b5beea63229a0184c965cdf.setIcon(icon_4d7f655796aeae09e43f3ec06326aede);
+        
+    
+        var popup_31b13b08638c93fc742b9fad4f13c19c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_031e1734cbf75a0aebedcdc33a839282 = $(`<div id="html_031e1734cbf75a0aebedcdc33a839282" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Puerto de sagunto</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>ES-2023-010FOSI</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/ES-2023-010FOSI" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_31b13b08638c93fc742b9fad4f13c19c.setContent(html_031e1734cbf75a0aebedcdc33a839282);
+        
+
+        marker_4b1fd3ef1b5beea63229a0184c965cdf.bindPopup(popup_31b13b08638c93fc742b9fad4f13c19c)
+        ;
+
+        
+    
+    
+            var marker_0719ccd12e2410807d17d7b0a92ee913 = L.marker(
+                [39.8519011, -0.4895537],
+                {}
+            ).addTo(map_95f43cb3ac44f22a68dfb583a537348c);
+        
+    
+            var icon_c3c3cce3dcbbd86b8b90a69c926e738b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "university", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_0719ccd12e2410807d17d7b0a92ee913.setIcon(icon_c3c3cce3dcbbd86b8b90a69c926e738b);
+        
+    
+        var popup_0a226312938791a2ee6cce7b7d3f6ef4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a88dde0c49046ddc87ec9eeceb147757 = $(`<div id="html_a88dde0c49046ddc87ec9eeceb147757" style="width: 100.0%; height: 100.0%;"><!DOCTYPE html>         <html>         <head>             <h4 class="tableHeader" style="font-size:1.6em; text-align:center; font-weight: bolder;"> 1 offer in Segorbe (castellón)</h4>          </head>             <table id="popupTable" style="border: 1px solid; width: auto; padding: 0.2em;">             <thead>                   <tr>                     <th id="RefNoHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">RefNo</th>                     <th id="OfferTypeHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;" >Type</th>                     <th id="DetailsHeader" style="text-align: center; border: 1px solid; width: auto; font-size: 1.3em;">Details</th>                   </tr>             </thead>                 <tbody>                 <tr><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>ES-2023-7310</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:#bb5afd;"><span>COBE</span></td><td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: #bb5afd;"> <form action="https://127.0.0.1:8000/iaesteTable/offers/ES-2023-7310" method="get" target="_blank"> <button type="submit">Details </button> </form> </td></tr>                 </tbody>             </table>         </html>         </div>`)[0];
+            popup_0a226312938791a2ee6cce7b7d3f6ef4.setContent(html_a88dde0c49046ddc87ec9eeceb147757);
+        
+
+        marker_0719ccd12e2410807d17d7b0a92ee913.bindPopup(popup_0a226312938791a2ee6cce7b7d3f6ef4)
+        ;
+
+        
+    
+</script>

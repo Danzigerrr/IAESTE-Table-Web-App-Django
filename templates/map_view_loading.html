@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <meta charset="UTF-8">
+    <title>IAESTE Offers - Poland</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/offersListStyles.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/verticalMenuStyles.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/authorFootnoteStyles.css' %}"/>
+    <script src="{% static 'JavaScript/JsScripts.js' %}"></script>
+    <script src="{% static 'JavaScript/staticElemAdder.js' %}"></script>
+
+    <style>
+        .no-display{
+            display: none;
+        }
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            width: 50%;
+            padding: 10px;
+        }
+        .mapBorders{
+            width: 50%;
+            border: black;
+            border-width: 10px;
+        }
+    </style>
+
+</head>
+
+<body class="tableWithOffers" onload="updateDate(); addVerticalMenu(); addAuthorFootnote();">
+
+
+    <div class="pageTitleClass">
+        <div id="pageTitle">IAESTE OFFERS - POLAND</div>
+
+        <p id="current_date"> </p>
+
+        <p id="numbOfOffers"> Currently available {{offer_list_len}} offers.</p>
+    </div>
+
+    <div id="verticalMenuElement"></div>
+
+    <br>
+
+    <div id="spinner_animation">
+        <div class="container mt-3 center" >
+             <div class="spinner-border" role="status">
+            </div>
+        </div>
+    </div>
+
+    <div id="offers_list" class="mapBorders">
+
+    </div>
+
+    <script>
+        const spinner = document.getElementById("spinner_animation");
+        const offerListDiv = document.getElementById("offers_list");
+
+        $.ajax({
+            type:'GET',
+            url:'',
+            success: function (res){
+                setTimeout(() => {
+                    spinner.classList.add("no-display");
+
+                console.log("success");
+                console.log("{{mapOfOffers}}");
+                offerListDiv.innerHTML += `
+                    <h2>Hello</h2>
+                `
+                const mymap = `{{mapOfOffers}}`
+                offerListDiv.innerHTML += '<object type="text/html" data=mymap ></object>';
+
+
+                }, 1)
+            },
+            error: function (er) {
+                console.log("error occurred");
+
+            },
+        })
+    </script>
+
+
+    <br>
+
+    <div id="authorFootnote"></div>
+
+</body>
+</html>

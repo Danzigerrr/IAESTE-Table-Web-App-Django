@@ -2,15 +2,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <meta charset="UTF-8">
     <title>IAESTE Offers - Poland</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="{% static 'css/offersListStyles.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/verticalMenuStyles.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/authorFootnoteStyles.css' %}"/>
     <script src="{% static 'JavaScript/JsScripts.js' %}"></script>
     <script src="{% static 'JavaScript/staticElemAdder.js' %}"></script>
 
+    <style>
+        .no-display{
+            display: none;
+        }
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            width: 50%;
+            padding: 10px;
+        }
+    </style>
 
 </head>
 
@@ -29,79 +46,113 @@
 
     <br>
 
-    <div id="TableOffers">
-        <table id="tableWithOffers">
-
-            <thead>
-                <tr>
-                    <th>
-                        Country <br>
-                        <input type="text" id="column0" onkeyup="filterColumn(0)" placeholder="Filter" class="filterColumnInput"> <br>
-                        <button onclick="sortTable(0)" class="sortButton">Sort</button>
-                    </th>
-                    <th>
-                        City <br>
-                        <input type="text" id="column1" onkeyup="filterColumn(1)" placeholder="Filter" class="filterColumnInput"> <br>
-                        <button onclick="sortTable(1)" class="sortButton">Sort</button>
-                    </th>
-                    <th>
-                        Deadline <br>
-                        <button onclick="sortTable(2)" class="sortButton">Sort</button>
-                    </th>
-                    <th>
-                        General disciplines <br>
-                        <input type="text" id="column3" onkeyup="filterColumn(3)" placeholder="Filter" class="filterColumnInput">
-                        <button onclick="sortTable(3)" class="sortButton">Sort</button>
-                    </th>
-                    <th> Offer type <br>
-                        <input type="text" id="column4" onkeyup="filterColumn(4)" placeholder="Filter" class="filterColumnInput">
-                        <button onclick="sortTable(4)" class="sortButton">Sort</button>
-                    </th>
-                    <th> Details </th>
-                </tr>
-            </thead>
-
-            <tbody>
-                {% for offer in offer_list %}
-                    <tr>
-                        <td class="Country">
-                            {{offer.Country}}
-                        </td>
-
-                        <td class="City">
-                            <a class="link" href="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/offers/{{offer.RefNo}}/city" target="_blank">
-                                {{offer.City}}
-                            </a>
-                        </td>
-
-                        <td class="Deadline">
-                            {{offer.Deadline}}
-                        </td>
-
-                        <td class="GeneralDisciplines">
-                            {{offer.GeneralDisciplines}}
-                        </td>
-
-                        <td class="OfferType">
-                            {{offer.OfferType}}
-                        </td>
-
-                        <td class="tdDetails">
-                            <div>
-                                <form class="linkToOfferDetails" action="{{offer.RefNo}}" method="get" target="_blank">
-                                    <button type="submit">See details</button>
-                                </form>
-                            </div>
-                        </td>
-
-                    </tr>
-                {% endfor %}
-            </tbody>
-
-        </table>
+    <div id="spinner_animation">
+        <div class="container mt-3 center" >
+             <div class="spinner-border" role="status">
+            </div>
+        </div>
     </div>
 
-    <br>
+    <div id="offers_list">
+
+    </div>
+
+    <script>
+        const spinner = document.getElementById("spinner_animation");
+        const offerListDiv = document.getElementById("offers_list");
+
+        $.ajax({
+            type:'GET',
+            url:'',
+            success: function (res){
+                setTimeout(() => {
+                    spinner.classList.add("no-display");
+
+                console.log("success");
+                // console.log("{{offer_list}}");
+                offerListDiv.innerHTML += `
+                <div id="TableOffers">
+                    <table id="tableWithOffers">
+
+                        <thead>
+                            <tr>
+                                <th>
+                                    Country <br>
+                                    <input type="text" id="column0" onkeyup="filterColumn(0)" placeholder="Filter" class="filterColumnInput"> <br>
+                                    <button onclick="sortTable(0)" class="sortButton">Sort</button>
+                                </th>
+                                <th>
+                                    City <br>
+                                    <input type="text" id="column1" onkeyup="filterColumn(1)" placeholder="Filter" class="filterColumnInput"> <br>
+                                    <button onclick="sortTable(1)" class="sortButton">Sort</button>
+                                </th>
+                                <th>
+                                    Deadline <br>
+                                    <button onclick="sortTable(2)" class="sortButton">Sort</button>
+                                </th>
+                                <th>
+                                    General disciplines <br>
+                                    <input type="text" id="column3" onkeyup="filterColumn(3)" placeholder="Filter" class="filterColumnInput">
+                                    <button onclick="sortTable(3)" class="sortButton">Sort</button>
+                                </th>
+                                <th> Offer type <br>
+                                    <input type="text" id="column4" onkeyup="filterColumn(4)" placeholder="Filter" class="filterColumnInput">
+                                    <button onclick="sortTable(4)" class="sortButton">Sort</button>
+                                </th>
+                                <th> Details </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for offer in offer_list %}
+                                <tr>
+                                    <td class="Country">
+                                        {{offer.Country}}
+                                    </td>
+
+                                    <td class="City">
+                                        <a class="link" href="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/offers/{{offer.RefNo}}/city" target="_blank">
+                                            {{offer.City}}
+                                        </a>
+                                    </td>
+
+                                    <td class="Deadline">
+                                        {{offer.Deadline}}
+                                    </td>
+
+                                    <td class="GeneralDisciplines">
+                                        {{offer.GeneralDisciplines}}
+                                    </td>
+
+                                    <td class="OfferType">
+                                        {{offer.OfferType}}
+                                    </td>
+
+                                    <td class="tdDetails">
+                                        <div>
+                                            <form class="linkToOfferDetails" action="{{offer.RefNo}}" method="get" target="_blank">
+                                                <button type="submit">See details</button>
+                                            </form>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+
+                    </table>
+                </div>
+                `
+                }, 1)
+            },
+            error: function (er) {
+                console.log("error occurred");
+
+            },
+        })
+    </script>
+
+
     <br>
 
     <div id="authorFootnote"></div>
