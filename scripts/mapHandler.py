@@ -73,7 +73,7 @@ def setColorOfOffer(offerType):
 def popup_html(offerList, offerCount, city, urlFromRequest):
     # adjust the url to details
     splitted = urlFromRequest.split("/")
-    urlToDetails = "http://" + splitted[2] + '/' + splitted[3] + '/offers/'
+    urlToDetails = splitted[0] + "//" + splitted[2] + '/' + splitted[3] + '/offers/'
 
     rows = ""
     for offer in offerList:
