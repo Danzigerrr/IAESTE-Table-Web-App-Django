@@ -253,7 +253,6 @@ def savingDiscToNewList(newlist, s, splitted):
     return newlist
 
 
-
 def adjustGenDiscipl(discipList):
     newdiscList = []
     for disc in discipList:
@@ -279,27 +278,27 @@ def loadDataToDB():
     activeOffersRefNumbers = []
 
     # check all offers that are currently in the spreadsheet
+    saveActiveOffers(activeOffersRefNumbers, allOffersHTML)
+
+    deleteInactiveOffers(activeOffersRefNumbers)
+
+
+def saveActiveOffers(activeOffersRefNumbers, allOffersHTML):
     for offerHTML in allOffersHTML:
-        # check if offer exists in the spreadsheet
-        addNewOfferToDB(offerHTML)
+        # print("saving " + str(offerHTML.RefNo))
         activeOffersRefNumbers.append(offerHTML.RefNo)
-
-    # delete the offers that are no longer available in the spreadsheet, but still exist in the database
-    deleteInactiveOffersFromDB(activeOffersRefNumbers)
-
-
-def deleteInactiveOffersFromDB(activeOffersRefNumbers):
-    for refNo in activeOffersRefNumbers:
-        if refNo not in activeOffersRefNumbers:
-            print("deleting" + str(refNo))
-            Offer.objects.filter(RefNo=refNo).delete()
+        if Offer.objects.filter(RefNo=offerHTML.RefNo).exists():
+            print("the offer " + str(offerHTML.RefNo) + " already exists in the DB")
+        else:
+            saveOfferToDB(offerHTML)
 
 
-def addNewOfferToDB(offerHTML):
-    if not Offer.objects.filter(
-            RefNo=offerHTML.RefNo).exists():  # if it already in the DB -> dont save it; just save the RefNo
-        print("saving" + str(offerHTML.RefNo))
-        saveOfferToDB(offerHTML)
+def deleteInactiveOffers(activeOffersRefNumbers):
+    allOffersInDB = Offer.objects.all()
+    for offerInDB in allOffersInDB:
+        if offerInDB.RefNo not in activeOffersRefNumbers:
+            print("deleting" + str(offerInDB.RefNo))
+            Offer.objects.filter(RefNo=offerInDB.RefNo).delete()
 
 
 def saveOfferToDB(offerHTML):
