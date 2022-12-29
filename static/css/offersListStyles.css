@@ -141,3 +141,19 @@ button{
     margin-top: 2%;
     font-size: 0.6em;
 }
+
+table {
+    border-collapse:separate;
+    border:solid black 3px;
+    border-radius:3px;
+}
+
+td, th {
+    border-left:solid black 1px;
+    border-top:solid black 1px;
+}
+
+
+td:first-child, th:first-child {
+    border-left: none;
+}

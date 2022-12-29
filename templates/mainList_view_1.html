@@ -12,27 +12,7 @@
     <script src="{% static 'JavaScript/staticElemAdder.js' %}"></script>
 
 
-    <style>
-        table {
-    border-collapse:separate;
-    border:solid black 3px;
-    border-radius:3px;
-        }
-
-        td, th {
-            border-left:solid black 1px;
-            border-top:solid black 1px;
-        }
-
-
-        td:first-child, th:first-child {
-             border-left: none;
-        }
-
-    </style>
-
 </head>
-
 
 <body class="tableWithOffers" onload="updateDate(); addVerticalMenu(); addAuthorFootnote()">
 
@@ -47,33 +27,8 @@
 
     <div id="verticalMenuElement"></div>
 
-<br>
-    <script>
-        function searchInColumn(n) {
-          // Declare variables
-          var input, filter, table, tr, td, i, txtValue;
-          input = document.getElementById("myInput" + n.toString());
-          filter = input.value.toUpperCase();
-          table = document.getElementById("tableWithOffers");
-          tr = table.getElementsByTagName("tr");
+    <br>
 
-          // Loop through all table rows, and hide those who don't match the search query
-          for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[n]; // change this index if necessary --> index of column
-            if (td) {
-              txtValue = td.textContent || td.innerText;
-              if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-              } else {
-                tr[i].style.display = "none";
-              }
-            }
-          }
-        }
-    </script>
-
-
-    <!-- Offers list -->
     <div id="TableOffers">
         <table id="tableWithOffers">
 
@@ -81,12 +36,12 @@
                 <tr>
                     <th>
                         Country <br>
-                        <input type="text" id="myInput0" onkeyup="searchInColumn(0)" placeholder="Filter" class="filterColumnInput"> <br>
+                        <input type="text" id="column0" onkeyup="filterColumn(0)" placeholder="Filter" class="filterColumnInput"> <br>
                         <button onclick="sortTable(0)" class="sortButton">Sort</button>
                     </th>
                     <th>
                         City <br>
-                        <input type="text" id="myInput1" onkeyup="searchInColumn(1)" placeholder="Filter" class="filterColumnInput"> <br>
+                        <input type="text" id="column1" onkeyup="filterColumn(1)" placeholder="Filter" class="filterColumnInput"> <br>
                         <button onclick="sortTable(1)" class="sortButton">Sort</button>
                     </th>
                     <th>
@@ -95,11 +50,11 @@
                     </th>
                     <th>
                         General disciplines <br>
-                        <input type="text" id="myInput3" onkeyup="searchInColumn(3)" placeholder="Filter" class="filterColumnInput">
+                        <input type="text" id="column3" onkeyup="filterColumn(3)" placeholder="Filter" class="filterColumnInput">
                         <button onclick="sortTable(3)" class="sortButton">Sort</button>
                     </th>
                     <th> Offer type <br>
-                        <input type="text" id="myInput4" onkeyup="searchInColumn(4)" placeholder="Filter" class="filterColumnInput">
+                        <input type="text" id="column4" onkeyup="filterColumn(4)" placeholder="Filter" class="filterColumnInput">
                         <button onclick="sortTable(4)" class="sortButton">Sort</button>
                     </th>
                     <th> Details </th>

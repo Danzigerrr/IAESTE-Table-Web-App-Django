@@ -62,3 +62,31 @@ function updateDate() {
     day = date.getDate();
     document.getElementById("current_date").innerHTML = "Updated on " + month + "/" + day + "/" + year;
 }
+
+function addMenuToDiv() {
+    document.getElementById("addMenuHere").innerHTML +=
+        "<h3>This is the text which has been inserted by JS</h3>";
+}
+
+
+function filterColumn(n) {
+          // Declare variables
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("column" + n.toString());
+          filter = input.value.toUpperCase();
+          table = document.getElementById("tableWithOffers");
+          tr = table.getElementsByTagName("tr");
+
+          // Loop through all table rows, and hide those who don't match the search query
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[n]; // change this index if necessary --> index of column
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }
+          }
+        }

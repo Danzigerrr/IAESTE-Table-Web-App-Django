@@ -11,12 +11,9 @@
     <script src="{% static 'JavaScript/JsScripts.js' %}"></script>
     <script src="{% static 'JavaScript/staticElemAdder.js' %}"></script>
 
-
 </head>
 
-
-<body class="tableWithOffers" onload="updateDate(); addVerticalMenu(); addAuthorFootnote()">
-
+<body class="tableWithOffers" onload="addVerticalMenu(); addAuthorFootnote()">
 
     <div class="pageTitleClass">
         <h1>
@@ -24,31 +21,7 @@
         </h1>
     </div>
 
-        <script>
-        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-    </script>
-    <div id="verticalMenuElement">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-        <div class="topnav" id="myTopnav">
-            <a href="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/offers">Offers list</a>
-            <a href="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/map" target="_blank">Offers map</a>
-            <a href="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/aboutProject" target="_blank">About project</a>
-            <a href="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/aboutAuthor" target="_blank">About author</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-          </a>
-        </div>
-
-    </div>
+    <div id="verticalMenuElement"></div>
 
         <br>
     <div id="fromTheAuthor">
@@ -86,8 +59,7 @@ function myFunction() {
     <br>
     <br>
 
-
-
+    <div id="authorFootnote"></div>
 
 </body>
 </html>
