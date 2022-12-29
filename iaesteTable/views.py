@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from scripts.mapHandler import *
-
+from datetime import date
+import os
+import html
 
 def mainList(request):
     from scripts import loadDataFromIAESTESpreadsheet as load
@@ -31,9 +33,48 @@ def detail(request, RefNo):
 
 
 def map(request):
-    map = createMapForMultipleOffers()
-    html_string = map.get_root().render()
-    return render(request, "map_view_1.html", {"map": html_string})
+    currentDate = date.today()
+    # currentDate = date(2022, 12, 10)  # debugging
+    savingDirectory = 'generatedMaps/'
+    filename = "map_with_offers_"
+
+    # read current map
+    res = []  # list to store files
+    # Iterate directory
+    for path in os.listdir(savingDirectory):
+        # check if current path is a file
+        if os.path.isfile(os.path.join(savingDirectory, path)):
+            res.append(path)
+    # print(res)
+    currentMapIsUpToDate = False
+    if len(res) > 0:
+        if res[0] == "map_with_offers_" + str(currentDate) + ".html":
+            currentMapIsUpToDate = True
+
+    if currentMapIsUpToDate:
+        # print("using already generated map")
+        html_as_string = ""
+        filepath = savingDirectory + res[0]
+        with open(filepath, 'r') as file:
+            html_as_string = file.read().replace('\n', '')
+        return render(request, "map_view_1.html", {"map": html_as_string})
+    else:
+        # print('the date is different - deleting existing map')
+        import shutil
+        for filename in os.listdir(savingDirectory):
+            file_path = os.path.join(savingDirectory, filename)
+            try:
+                if os.path.isfile(file_path) or os.path.islink(file_path):
+                    os.unlink(file_path)
+                elif os.path.isdir(file_path):
+                    shutil.rmtree(file_path)
+            except Exception as e:
+                print('Failed to delete %s. Reason: %s' % (file_path, e))
+        # print("create new map")
+        map = createMapForMultipleOffers()
+        map.save(savingDirectory + "map_with_offers_" + str(currentDate) + ".html")
+        html_string = map.get_root().render()
+        return render(request, "map_view_1.html", {"map": html_string})
 
 
 def aboutProject(request):
