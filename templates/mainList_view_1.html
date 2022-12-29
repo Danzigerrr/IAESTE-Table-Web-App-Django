@@ -14,7 +14,7 @@
 
 </head>
 
-<body class="tableWithOffers" onload="updateDate(); addVerticalMenu(); addAuthorFootnote()">
+<body class="tableWithOffers" onload="updateDate(); addVerticalMenu(); addAuthorFootnote();">
 
 
     <div class="pageTitleClass">
@@ -87,9 +87,11 @@
                         </td>
 
                         <td class="tdDetails">
-                            <form action="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/offers/{{offer.RefNo}}" method="get" target="_blank">
-                                <button type="submit">See details</button>
-                            </form>
+                            <div>
+                                <form class="linkToOfferDetails" action="{{offer.RefNo}}" method="get" target="_blank">
+                                    <button type="submit">See details</button>
+                                </form>
+                            </div>
                         </td>
 
                     </tr>

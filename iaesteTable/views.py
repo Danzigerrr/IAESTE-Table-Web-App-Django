@@ -71,7 +71,8 @@ def map(request):
             except Exception as e:
                 print('Failed to delete %s. Reason: %s' % (file_path, e))
         # print("create new map")
-        map = createMapForMultipleOffers()
+        currentUrl = request.build_absolute_uri()
+        map = createMapForMultipleOffers(currentUrl)
         map.save(savingDirectory + "map_with_offers_" + str(currentDate) + ".html")
         html_string = map.get_root().render()
         return render(request, "map_view_1.html", {"map": html_string})

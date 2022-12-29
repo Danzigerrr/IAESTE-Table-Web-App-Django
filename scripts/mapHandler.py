@@ -70,7 +70,11 @@ def setColorOfOffer(offerType):
             return "#FFFFFF"
 
 
-def popup_html(offerList, offerCount, city):
+def popup_html(offerList, offerCount, city, urlFromRequest):
+    # adjust the url to details
+    splitted = urlFromRequest.split("/")
+    urlToDetails = "http://" + splitted[2] + '/' + splitted[3] + '/offers/'
+
     rows = ""
     for offer in offerList:
         color = setColorOfOffer(offer.OfferType)
@@ -79,8 +83,8 @@ def popup_html(offerList, offerCount, city):
         row += '<td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:' + color + ';"><span>' + offer.RefNo + '</span></td>'
         row += '<td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color:' + color + ';"><span>' + offer.OfferType + '</span></td>'
 
-        button = '<form action="https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/offers/' + \
-                 offer.RefNo + \
+        button = '<form action="' + \
+                 urlToDetails + offer.RefNo + \
                  '" method="get" target="_blank"> <button type="submit">Details </button> </form> '
 
         row += '<td style="border: 1px solid; padding: 0.3em; font-size:1.1em; background-color: ' + color + ';"> ' + button + '</td>'
@@ -127,7 +131,7 @@ def countFrequenciesOfCities(allOffers):
     return freq
 
 
-def createMapForMultipleOffers():
+def createMapForMultipleOffers(urlFromRequest):
     from iaesteTable.models import Offer
     allOffers = Offer.objects.all()
 
@@ -146,7 +150,7 @@ def createMapForMultipleOffers():
         lat, long = getLatAndLong(city)
 
         # set marker for the offer
-        html = popup_html(offerList, counter, city)
+        html = popup_html(offerList, counter, city, urlFromRequest)
         popup = folium.Popup(folium.Html(html, script=True))
         folium.Marker(location=[lat, long], popup=popup,
                       icon=folium.Icon(color='blue', icon='university', prefix='fa')).add_to(my_map)
