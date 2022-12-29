@@ -75,8 +75,7 @@ def popup_html(offerList, offerCount, city, urlFromRequest):
     splittedUrl = urlFromRequest.split("/")
 
     # TODO: this might be changed to 'http://' or 'splittedUrl[0]
-    # urlToDetails = "https://" + splittedUrl[2] + '/' + splittedUrl[3] + '/offers/'
-    urlToDetails = splittedUrl[0] + "//" + splittedUrl[2] + '/' + splittedUrl[3] + '/offers/'
+    urlToDetails = "https://" + splittedUrl[2] + '/' + splittedUrl[3] + '/offers/'
 
     rows = ""
     for offer in offerList:
