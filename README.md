@@ -2,7 +2,7 @@
 
 Author: Krzysztof Nazar
 
-Check this project running live with Heroku [here](https://iaeste-offers-django-web-appkn.herokuapp.com/iaesteTable/offers/) (use *ctrl + left mouse button* to open in a new tab).
+Check this project running live with Railway [here](https://iaesteofferspoland.up.railway.app/iaesteTable/offers/).
 
 
 ## Description
