@@ -33,8 +33,9 @@ def detail(request, RefNo):
 
 
 def getMap(request):
-    getMap_createNewMapEveryTime(request)
-    # getMap_mapWithCaching(request)
+    result = getMap_createNewMapEveryTime(request)
+    # result = getMap_mapWithCaching(request)
+    return result
 
 
 def getMap_createNewMapEveryTime(request):
