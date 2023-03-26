@@ -29,22 +29,26 @@
         }
         .mapBorders{
             width: 50%;
-            border: black;
-            border-width: 10px;
+            border: 10px black;
         }
     </style>
 
+
+    <script>
+        $(function(){
+          $("#includedContent").load("http://www.google.co.in");
+        });
+    </script>
+
 </head>
 
-<body class="tableWithOffers" onload="updateDate(); addVerticalMenu(); addAuthorFootnote();">
+<body class="tableWithOffers" onload="addVerticalMenu(); addAuthorFootnote();">
+
 
 
     <div class="pageTitleClass">
         <div id="pageTitle">IAESTE OFFERS - POLAND</div>
 
-        <p id="current_date"> </p>
-
-        <p id="numbOfOffers"> Currently available {{offer_list_len}} offers.</p>
     </div>
 
     <div id="verticalMenuElement"></div>
@@ -62,34 +66,38 @@
 
     </div>
 
-    <script>
-        const spinner = document.getElementById("spinner_animation");
-        const offerListDiv = document.getElementById("offers_list");
+     <div id="includedContent"></div>
 
-        $.ajax({
-            type:'GET',
-            url:'',
-            success: function (res){
-                setTimeout(() => {
-                    spinner.classList.add("no-display");
+    <iframe src="map_with_offers_2022-12-31.html" width="690"height="470" allowfullscreen loading="lazy"></iframe>
 
-                console.log("success");
-                console.log("{{mapOfOffers}}");
-                offerListDiv.innerHTML += `
-                    <h2>Hello</h2>
-                `
-                const mymap = `{{mapOfOffers}}`
-                offerListDiv.innerHTML += '<object type="text/html" data=mymap ></object>';
+<!--    <script>-->
+<!--        const spinner = document.getElementById("spinner_animation");-->
+<!--        const offerListDiv = document.getElementById("offers_list");-->
+
+<!--        $.ajax({-->
+<!--            type:'GET',-->
+<!--            url:'',-->
+<!--            success: function (res){-->
+<!--                setTimeout(() => {-->
+<!--                    spinner.classList.add("no-display");-->
+
+<!--                console.log("success");-->
+<!--                console.log("{{mapOfOffers}}");-->
+<!--                offerListDiv.innerHTML += `-->
+<!--                    <h2>Hello</h2>-->
+<!--                `-->
+<!--                const mymap = `{{mapOfOffers}}`-->
+<!--                offerListDiv.innerHTML += '<object type="text/html" data=mymap ></object>';-->
 
 
-                }, 1)
-            },
-            error: function (er) {
-                console.log("error occurred");
+<!--                }, 1)-->
+<!--            },-->
+<!--            error: function (er) {-->
+<!--                console.log("error occurred");-->
 
-            },
-        })
-    </script>
+<!--            },-->
+<!--        })-->
+<!--    </script>-->
 
 
     <br>

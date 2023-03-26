@@ -1,3 +1,4 @@
+import folium
 from django.shortcuts import render
 from scripts.mapHandler import *
 from datetime import date
@@ -43,12 +44,14 @@ def getMap_createNewMapEveryTime(request):
     # currentDate = date(2022, 12, 10)  # debugging
     savingDirectory = 'generatedMaps/'
     filename = "map_with_offers_"
-    templateToDisplay = "map_view_1.html"
-    # templateToDisplay = "map_view_loading.html"
+    #templateToDisplay = "map_view_1.html"
+    templateToDisplay = "map_view_loading.html"
     currentUrl = request.build_absolute_uri()
-    mapFolium = createMapForMultipleOffers(currentUrl)
+    # mapFolium = createMapForMultipleOffers(currentUrl)
+    mapFolium = folium.Map()
     mapFolium.save(savingDirectory + filename + str(currentDate) + ".html")
     html_string = mapFolium.get_root().render()
+    #return render(request, templateToDisplay, {"mapOfOffers": html_string})
     return render(request, templateToDisplay, {"mapOfOffers": html_string})
 
 

@@ -44,6 +44,7 @@ def createMap(cityName):
     my_map = folium.Map(
         location=[13, 16],
         zoom_start=2,
+
     )
 
     if latitude != 0 and longitude != 0:
