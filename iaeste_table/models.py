@@ -4,6 +4,7 @@ from django.db import models
 
 
 class Offer(models.Model):
+    IdNumber = models.FloatField()
     RefNo = models.CharField(max_length=100, default="")
     Deadline = models.CharField(max_length=100, default="")
     From = models.CharField(max_length=100, default="")
@@ -36,3 +37,4 @@ class Offer(models.Model):
 
     def __str__(self):
         return self.RefNo
+

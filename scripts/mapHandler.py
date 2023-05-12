@@ -135,7 +135,7 @@ def countFrequenciesOfCities(allOffers):
 
 
 def createMapForMultipleOffers(urlFromRequest):
-    from iaesteTable.models import Offer
+    from iaeste_table.models import Offer
     allOffers = Offer.objects.all()
 
     cityFreq = countFrequenciesOfCities(allOffers)

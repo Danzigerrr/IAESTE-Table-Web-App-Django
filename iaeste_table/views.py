@@ -7,15 +7,15 @@ import os
 
 def mainList(request):
     from scripts import loadDataFromIAESTESpreadsheet as load
-    load.loadDataToDB()
-    from iaesteTable.models import Offer
+    load.DataLoader()
+    from iaeste_table.models import Offer
     offer_list = Offer.objects.all()
 
     return render(request, "mainList_view_1.html", {"offer_list": offer_list, "offer_list_len": len(offer_list)})
 
 
 def findCityOfOfferWithId(RefNo):
-    from iaesteTable.models import Offer
+    from iaeste_table.models import Offer
     offer = Offer.objects.get(RefNo=RefNo)
     return str(offer.City)
 
@@ -28,7 +28,7 @@ def city(request, RefNo):
 
 
 def detail(request, RefNo):
-    from iaesteTable.models import Offer
+    from iaeste_table.models import Offer
     offer = Offer.objects.get(RefNo=RefNo)
     return render(request, "detail_view_1.html", {"offer": offer})
 

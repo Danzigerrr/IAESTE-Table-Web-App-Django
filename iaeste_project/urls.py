@@ -1,4 +1,4 @@
-"""storefront URL Configuration
+"""iaeste_project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -19,7 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('iaesteTable/', include('iaesteTable.urls')),
+    path('iaeste_table/', include('iaeste_table.urls')),
     path('__debug__/', include('debug_toolbar.urls')),
 
 ]
