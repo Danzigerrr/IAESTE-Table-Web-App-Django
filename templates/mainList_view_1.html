@@ -2,9 +2,9 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Our Funky HTML Page</title>
-		<meta name="description" content="Our first page">
-		<meta name="keywords" content="html tutorial template">
+		<title>IASETE POLAND OFFERS</title>
+		<meta name="description" content="Page with offers from IAESTE Poland">
+		<meta name="keywords" content="iaeste poland internship aborad">
 
 		<!--
 			Bootstrap 4
@@ -14,11 +14,13 @@
 		</script>
 		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+		    <script src="{% static 'JavaScript/staticElemAdder.js' %}"></script>
 
 		<style>
 			body {
-			  margin: 0.5em;
+			  margin: 1em;
 			  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			  background-color: #005E9E;
 			}
 
 			/* data-filter */
@@ -45,6 +47,7 @@
 			/* data-sorter */
 			table[data-sorter] thead th {
 			  cursor: pointer;
+				background-color: #87cefa;
 			}
 			  table[data-sorter] thead th.sort-asc:after {
 				content: '\25B2';
@@ -62,13 +65,89 @@
 			  display: none;
 			}
 
+			.mainContent{
+				margin-left: 4em;
+				margin-right: 4em;
+				/*font-size: 0.8vw;*/
+
+			}
+			tr{
+				background-color: #a6d6f6;
+
+			}
+			tr:hover td {
+				background-color: #fbffa8;
+			}
+
+			.rowWithLink{
+				cursor: pointer;
+			}
+
+
+
+		/*	navbar styles*/
+			#verticalMenuElement{
+				margin: auto;
+				padding-bottom: 1.5em;
+				margin-left: 4em;
+				margin-right: 4em;
+				font-weight: bolder;
+			}
+			#verticalMenuElement ul {
+			  list-style-type: none;
+			  margin: 0;
+			  padding: 0;
+			  overflow: hidden;
+			  background-color: dimgrey;
+			}
+
+			#verticalMenuElement li {
+			  float: left;
+			}
+
+			#verticalMenuElement li a {
+			  display: block;
+			  color: white;
+			  text-align: center;
+			  padding: 14px 16px;
+			  text-decoration: none;
+			}
+
+			#verticalMenuElement li a:hover {
+			  background-color: #565656;
+			}
+
+			#verticalMenuElement .active {
+			  background-color: #99da33;
+			}
+
+
+
+
+
 		</style>
 
 	</head>
-	<body>
-		<h1 id="h1">
-			Tables with Filter and Column Selectors
-		</h1>
+	<body onload="addLinksToMenu()">
+
+		 <div class="pageTitleClass">
+        	<div id="pageTitle">Offer number: {{offer.RefNo}}</div>
+		</div>
+
+		<div id="verticalMenuElement">
+			<ul>
+			  <li><a id="menu-link-offers" href="">Offers List</a></li>
+			  <li><a id="menu-link-map" href="">Offers Map</a></li>
+			  <li><a id="menu-link-about-project" href="">About Project</a></li>
+			  <li><a id="menu-link-about-author" href="">About Author</a></li>
+			  <li><a id="menu-link-iaeste-poland" href="">IAESTE Poland</a></li>
+			</ul>
+
+		</div>
+
+		<div class="mainContent">
+
+
 		<!--
 			Filter/Search Control
 			https://stackoverflow.com/questions/12036038/is-there-unicode-glyph-symbol-to-represent-search
@@ -91,7 +170,7 @@
 			</button>
 		</div>
 		<!--
-			Mini-Tabela Teste
+			Table
 			-->
 		<table id="theTableMini" class="table table-hover apolices" data-sorter>
 			<thead>
@@ -102,23 +181,23 @@
 					<th>
 						City
 					</th>
-					<th>
+					<th style="width:8em">
 						Deadline
+					</th>
+					<th>
+						GrossPay
 					</th>
 					<th>
 						General disciplines
 					</th>
-					<th>
+					<th style="width:8em">
                         Offer type
-					</th>
-					<th>
-                        Details
 					</th>
 				</tr>
 			</thead>
 			<tbody>
 				{% for offer in offer_list %}
-				<tr>
+				<tr onclick="window.open('{{offer.RefNo}}', '_blank');" class="rowWithLink">
 					<td class="Country">
 						{{offer.Country}}
 					</td>
@@ -128,24 +207,24 @@
 					<td class="Deadline">
 						{{offer.Deadline}}
 					</td>
+					<td class="GrossPay">
+						{{offer.GrossPay}}
+					</td>
 					<td class="GeneralDisciplines">
 						{{offer.GeneralDisciplines}}
 					</td>
 					<td class="OfferType">
 						{{offer.OfferType}}
 					</td>
-					<td class="tdDetails">
-						<div>
-							<form class="linkToOfferDetails" action="{{offer.RefNo}}" method="get" target="_blank">
-								<button type="submit">See details</button>
-							</form>
-						</div>
-					</td>
+
 				</tr>
 				{% endfor %}
 			</tbody>
 		</table>
-		<script>
+			</div>
+		<div id="authorFootnote"></div>
+
+			<script>
 			// initialize filters
 			let filters = document.querySelectorAll("[data-filter-for]");
 			for (let i = 0; i < filters.length; i++) {
@@ -308,7 +387,7 @@
 			    let headers = Array.from(table.tHead.children[0].querySelectorAll("th"));
 
                 // details are not available for sorting
-                let popped = headers.pop();
+                // let popped = headers.pop();
 
                 let tbody = table.querySelector("tbody");
 			    let originalRows = Array.from(tbody.querySelectorAll("tr"));
@@ -344,6 +423,59 @@
 			    });
 			}
 
+			// row as a button
+			jQuery(document).ready(function($) {
+				$(".clickable-row").click(function() {
+					window.location = $(this).data("href");
+				});
+			});
+
+
+			// horiznotal menu - add links to buttons
+			function addLinksToMenu(){
+				const baseUrl = getBaseUrl();
+				console.log(baseUrl)
+				// create link for every menu option
+				const menuLinkOfferList =  'http://' + baseUrl + 'offers/' ;
+				const menuLinkOfferMap =  'http://' + baseUrl + 'map/' ;
+				const menuLinkAboutProject = 'http://' + baseUrl + 'aboutProject/';
+				const menuLinkAboutAuthor= 'http://' + baseUrl + 'aboutAuthor/';
+				const menuLinkIaestePoland= 'https://www.iaeste.pl/';
+
+				document.getElementById("menu-link-offers").href=menuLinkOfferList;
+
+				document.getElementById("menu-link-map").href=menuLinkOfferMap;
+				document.getElementById("menu-link-map").target="_blank";
+
+				document.getElementById("menu-link-about-project").href=menuLinkAboutProject;
+				document.getElementById("menu-link-about-project").target="_blank";
+
+				document.getElementById("menu-link-about-author").href=menuLinkAboutAuthor;
+				document.getElementById("menu-link-about-author").target="_blank";
+
+				document.getElementById("menu-link-iaeste-poland").href=menuLinkIaestePoland;
+				document.getElementById("menu-link-iaeste-poland").target="_blank";
+
+				// adjust the active menu button --> current page
+				const currentUrl = window.location.href;
+				switch(currentUrl) {
+				  case menuLinkOfferList:
+					document.getElementById("menu-link-offers").classList.add("active");
+					break;
+				  case menuLinkOfferMap:
+					document.getElementById("menu-link-map").classList.add("active");
+					break;
+				  case menuLinkAboutProject:
+					document.getElementById("menu-about-project").classList.add("active");
+					break;
+				  case menuLinkAboutAuthor:
+					document.getElementById("menu-about-author").classList.add("active");
+					break;
+				  default:
+					document.getElementById("menu-link-offers").classList.add("active");
+				}
+
+			}
 		</script>
 	</body>
 </html>

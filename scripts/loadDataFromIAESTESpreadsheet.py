@@ -120,7 +120,7 @@ class DataLoader:
     def deleteInactiveOffers(self, OffersFromUrl):
         OffersFromDB = Offer.objects.all()
         for offerDB in OffersFromDB:
-            print(offerDB.RefNo)
+            # print(offerDB.RefNo)
             inactive = True
             for index, offerUrl in OffersFromUrl.iterrows():
                 if offerDB.RefNo == offerUrl.RefNo:
