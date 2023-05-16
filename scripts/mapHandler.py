@@ -126,7 +126,7 @@ def countFrequenciesOfCities(allOffers):
     # Creating an empty dictionary
     freq = {}
     for offer in allOffers:
-        if (offer.City in freq):
+        if offer.City in freq:
             freq[offer.City] += 1
         else:
             freq[offer.City] = 1

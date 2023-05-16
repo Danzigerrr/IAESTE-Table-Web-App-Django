@@ -1,152 +1,4 @@
-{% load static %}
-<!doctype html>
-<html>
-	<head>
-		<title>Our Funky HTML Page</title>
-		<meta name="description" content="Our first page">
-		<meta name="keywords" content="html tutorial template">
-
-		<!--
-			Bootstrap 4
-			https://getbootstrap.com/docs/4.6/getting-started/introduction/
-			-->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-		</script>
-		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-
-		<style>
-			body {
-			  margin: 0.5em;
-			  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			}
-
-			/* data-filter */
-			div.input-group.data-filter {
-			  display: inline-flex;
-			  width: 16em;
-			}
-
-			/* data-colpicker */
-			div[data-colpicker-for] {
-			  display: inline-block;
-			  vertical-align: top;
-			  width: 12em;
-			}
-
-			ul.dropdown-menu li {
-			  margin: 0.15em 1em;
-			}
-
-			ul.dropdown-menu li label {
-			  width: 100%;
-			}
-
-			/* data-sorter */
-			table[data-sorter] thead th {
-			  cursor: pointer;
-			}
-			  table[data-sorter] thead th.sort-asc:after {
-				content: '\25B2';
-				margin-left: 0.5em;
-			  }
-			  table[data-sorter] thead th.sort-desc:after {
-				content: '\25BC';
-				margin-left: 0.5em;
-			  }
-
-			/* hide table rows/columns */
-			th.hide-cell,
-			td.hide-cell,
-			tr.hide-row {
-			  display: none;
-			}
-
-		</style>
-
-	</head>
-	<body>
-		<h1 id="h1">
-			Tables with Filter and Column Selectors
-		</h1>
-		<!--
-			Filter/Search Control
-			https://stackoverflow.com/questions/12036038/is-there-unicode-glyph-symbol-to-represent-search
-			-->
-		<div class="input-group data-filter">
-			<span class="input-group-text">&#x1F50E;&#xFE0E;</span>
-			<input type="text" class="form-control" placeholder="Filter" data-filter-for="theTableMini">
-		</div>
-		<!--
-			Column Picker
-			-->
-		<div data-colpicker-for="theTableMini">
-			<button
-				class="btn btn-primary dropdown-toggle"
-				type="button"
-				data-toggle="dropdown"
-				data-auto-close="outside"
-				title="Selecionar Colunas">
-			&#x2699;
-			</button>
-		</div>
-		<!--
-			Mini-Tabela Teste
-			-->
-		<table id="theTableMini" class="table table-hover apolices" data-sorter>
-			<thead>
-				<tr>
-					<th>
-						Country
-					</th>
-					<th>
-						City
-					</th>
-					<th>
-						Deadline
-					</th>
-					<th>
-						General disciplines
-					</th>
-					<th>
-                        Offer type
-					</th>
-					<th>
-                        Details
-					</th>
-				</tr>
-			</thead>
-			<tbody>
-				{% for offer in offer_list %}
-				<tr>
-					<td class="Country">
-						{{offer.Country}}
-					</td>
-					<td class="City">
-						{{offer.City}}
-					</td>
-					<td class="Deadline">
-						{{offer.Deadline}}
-					</td>
-					<td class="GeneralDisciplines">
-						{{offer.GeneralDisciplines}}
-					</td>
-					<td class="OfferType">
-						{{offer.OfferType}}
-					</td>
-					<td class="tdDetails">
-						<div>
-							<form class="linkToOfferDetails" action="{{offer.RefNo}}" method="get" target="_blank">
-								<button type="submit">See details</button>
-							</form>
-						</div>
-					</td>
-				</tr>
-				{% endfor %}
-			</tbody>
-		</table>
-		<script>
-			// initialize filters
+// initialize filters
 			let filters = document.querySelectorAll("[data-filter-for]");
 			for (let i = 0; i < filters.length; i++) {
 			  initFilter(filters[i]);
@@ -309,6 +161,7 @@
 
                 // details are not available for sorting
                 let popped = headers.pop();
+                console.log(popped);
 
                 let tbody = table.querySelector("tbody");
 			    let originalRows = Array.from(tbody.querySelectorAll("tr"));
@@ -343,7 +196,3 @@
 			        });
 			    });
 			}
-
-		</script>
-	</body>
-</html>

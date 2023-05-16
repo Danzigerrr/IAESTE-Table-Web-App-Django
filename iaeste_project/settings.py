@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-&9u_z52rov8!vqulro1+$l#dl^9st41!=u!r6u@=xlshqcd%+h
 #DEBUG = False
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'iaeste-offers-django-web-appkn.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'iaeste_project',
     'iaeste_table',
 
-
 ]
 
 MIDDLEWARE = [
@@ -52,7 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
+
 
 ]
 
@@ -116,6 +115,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+import mimetypes
+mimetypes.add_type("application/javascript", ".js", True)
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
