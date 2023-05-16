@@ -121,7 +121,13 @@
 			  background-color: #99da33;
 			}
 
-
+		/*	main title styling*/
+		#pageMainTitle{
+			text-align: center;
+			font-size: 2.5em;
+			font-weight: bold;
+			color: #fffc2f;
+		}
 
 
 
@@ -130,9 +136,9 @@
 	</head>
 	<body onload="addLinksToMenu()">
 
-		 <div class="pageTitleClass">
-        	<div id="pageTitle">Offer number: {{offer.RefNo}}</div>
-		</div>
+	<div id="pageMainTitle">
+		IAESTE Poland offers - {{offer_list_len}} available
+	</div>
 
 		<div id="verticalMenuElement">
 			<ul>
@@ -144,6 +150,7 @@
 			</ul>
 
 		</div>
+
 
 		<div class="mainContent">
 
@@ -172,7 +179,7 @@
 		<!--
 			Table
 			-->
-		<table id="theTableMini" class="table table-hover apolices" data-sorter>
+		<table id="theTableMini" class="table table-hover apolices table-rounded-corners" data-sorter>
 			<thead>
 				<tr>
 					<th>
