@@ -35,7 +35,7 @@ def get_map(request):
     path = savingDirectory + filename
     file_exists = os.path.exists(path)
     if file_exists:
-        with open(path, 'r') as file:
+        with open(path, 'r', encoding='utf-8') as file:
             folium_map_as_html = file.read().replace('\n', '')
 
         return render(request, "map_view_1.html", {"mapOfOffers": folium_map_as_html})

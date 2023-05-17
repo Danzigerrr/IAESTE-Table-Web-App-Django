@@ -138,7 +138,7 @@ def saveMapToFile(html_string):
         os.makedirs(savingDirectory)
 
     filename = "map_on_" + str(today) + ".txt"
-    with open(directory + filename, "w", encoding="utf-8") as text_file:
+    with open(savingDirectory + filename, "w", encoding="utf-8") as text_file:
         text_file.write(html_string)
 
 
