@@ -24,8 +24,15 @@ def get_map(request):
     currentDate = date.today()
     currentDate = date(2023, 12, 10)  # debugging
     savingDirectory = 'savedMaps/'
+
+    ## create a directory if it does not exist
+    # Check if the directory exists
+    if not os.path.exists(savingDirectory):
+        # If it doesn't exist, create it
+        os.makedirs(savingDirectory)
+
     filename = "map_on_" + str(currentDate) + ".txt"
-    path = savingDirectory+filename
+    path = savingDirectory + filename
     file_exists = os.path.exists(path)
     if file_exists:
         with open(path, 'r') as file:

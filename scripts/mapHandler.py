@@ -129,7 +129,14 @@ def addStylesToMap(html_string):
 
 def saveMapToFile(html_string):
     today = date.today()
-    directory = 'savedMaps/'
+    savingDirectory = 'savedMaps/'
+
+    ## create a directory if it does not exist
+    # Check if the directory exists
+    if not os.path.exists(savingDirectory):
+        # If it doesn't exist, create it
+        os.makedirs(savingDirectory)
+        
     filename = "map_on_" + str(today) + ".txt"
     with open(directory + filename, "w", encoding="utf-8") as text_file:
         text_file.write(html_string)
