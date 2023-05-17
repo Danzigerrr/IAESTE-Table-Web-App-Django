@@ -127,20 +127,6 @@ def addStylesToMap(html_string):
     return html_string
 
 
-def saveMapToFile(html_string):
-    today = date.today()
-    savingDirectory = 'savedMaps/'
-
-    ## create a directory if it does not exist
-    # Check if the directory exists
-    if not os.path.exists(savingDirectory):
-        # If it doesn't exist, create it
-        os.makedirs(savingDirectory)
-
-    filename = "map_on_" + str(today) + ".txt"
-    with open(savingDirectory + filename, "w", encoding="utf-8") as text_file:
-        text_file.write(html_string)
-
 
 def createMapForOffers(urlFromRequest):
     allOffers = Offer.objects.all()
@@ -165,8 +151,6 @@ def createMapForOffers(urlFromRequest):
     html_string = mapWithOffers.get_root().render()
 
     html_string = addStylesToMap(html_string)
-
-    saveMapToFile(html_string)
 
     return html_string
 
