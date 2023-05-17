@@ -59,7 +59,7 @@ class DataLoader:
         self.deleteInactiveOffers(self.allOffersHTML)
 
     def getOffersFromUrl(self):
-        df = pd.read_html(self.url)[0]
+        df = pd.read_html(self.url, encoding='utf-8')[0]
 
         # adjust column names
         df.iloc[0] = df.iloc[0].str.replace(' ', '')
