@@ -32,7 +32,7 @@ def saveMapToFile(directory, file_to_save, folium_map_as_html):
 
 def get_map(request):
     currentDate = date.today()
-    currentDate = date(2023, 12, 10)  # debugging
+    # currentDate = date(2023, 12, 10)  # debugging
     save_directory = 'savedMaps/'
     filename = "map_on_"
     save_format = '.txt'
