@@ -20,14 +20,14 @@ def detail(request, RefNo):
     return render(request, "detail_view_1.html", {"offer": offer})
 
 
-def saveMapToFile(directory, file_to_save):
+def saveMapToFile(directory, file_to_save, folium_map_as_html):
     ## create a directory if it does not exist
     # Check if the directory exists
     if not os.path.exists(directory):
         # If it doesn't exist, create it
         os.makedirs(directory)
     with open(file_to_save, "w", encoding="utf-8") as text_file:
-        text_file.write(html_string)
+        text_file.write(folium_map_as_html)
 
 
 def get_map(request):
@@ -53,7 +53,7 @@ def get_map(request):
 
         currentUrl = request.build_absolute_uri()
         folium_map_as_html = createMapForOffers(currentUrl)
-        saveMapToFile(save_directory, file_to_save)
+        saveMapToFile(save_directory, file_to_save, folium_map_as_html)
         return render(request, "map_view_1.html", {"mapOfOffers": folium_map_as_html})
 
 
