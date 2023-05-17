@@ -1,7 +1,7 @@
 import folium
 from iaeste_table.models import Offer
 from datetime import date
-
+import os
 
 def getCoordinatesOfCity(city, country):
     from geopy.exc import GeocoderTimedOut
@@ -136,7 +136,7 @@ def saveMapToFile(html_string):
     if not os.path.exists(savingDirectory):
         # If it doesn't exist, create it
         os.makedirs(savingDirectory)
-        
+
     filename = "map_on_" + str(today) + ".txt"
     with open(directory + filename, "w", encoding="utf-8") as text_file:
         text_file.write(html_string)
