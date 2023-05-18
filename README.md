@@ -2,7 +2,7 @@
 
 Author: Krzysztof Nazar
 
-Check this project running live with Pythonanywhere [here](https://iaesteofferspoland.up.railway.app/iaesteTable/offers/).
+Check this project running live with Pythonanywhere [here](http://iaestetablebykn.pythonanywhere.com/iaeste_table/offers/).
 
 
 ## The goal of the project
