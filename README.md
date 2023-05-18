@@ -2,6 +2,7 @@
 
 Author: Krzysztof Nazar
 
+## [Live demo](http://iaestetablebykn.pythonanywhere.com/iaeste_table/offers/)
 Check this project running live with Pythonanywhere [here](http://iaestetablebykn.pythonanywhere.com/iaeste_table/offers/).
 
 
