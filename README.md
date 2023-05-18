@@ -2,11 +2,16 @@
 
 Author: Krzysztof Nazar
 
-Check this project running live with Railway [here](https://iaesteofferspoland.up.railway.app/iaesteTable/offers/).
+Check this project running live with Pythonanywhere [here](https://iaesteofferspoland.up.railway.app/iaesteTable/offers/).
 
 
-## Description
+## The goal of the project
 **The goal of this project was to deploy a web application displaying IAESTE Poland offers for international internships. I wanted to make the searching process much more comfortable, faster and easier for the user.**
+
+## Main functionalities for user
+ - **Offers List** - Check every currently available offer. The table can be sorted and filtered. The user can select which columns are visible.
+ - **Offers Map** - See the offers on the interactive map. A pin is set in every location where at least one offer is available. After clicking the button, user can go to details of selected offer.</li>
+            
 
 ## IAESTE Association 
 
@@ -39,11 +44,7 @@ The major steps in this project were:
  - geopy
  - NumPy
  - urllib
- - re
- - os
- - sys
 
 ## Future improvements
- - Add more responsive CSS
- - Add loading animations when the data is collected, and the user is waiting for displaying it
+ - Add more responsive CSS (for mobiles)
 

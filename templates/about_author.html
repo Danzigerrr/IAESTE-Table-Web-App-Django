@@ -1,57 +1,115 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-    <meta charset="UTF-8">
-    <title>Author page</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/offersListStyles.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/verticalMenuStyles.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/authorFootnoteStyles.css' %}"/>
-    <script src="{% static 'JavaScript/JsScripts.js' %}"></script>
-    <script src="{% static 'JavaScript/staticElemAdder.js' %}"></script>
-</head>
-<body class="tableWithOffers" onload="addVerticalMenu(); addAuthorFootnote()">
-
-    <div class="pageTitleClass">
-        <div id="pageTitle">About the author</div>
-
-        <div id="verticalMenuElement"></div>
-
-        <h2>Welcome to a webapp created by</h2>
-        <h1>Krzysztof Nazar</h1>
-        <h3>
-            Hi everyone!
+<!doctype html>
+<html>
+   <head>
+      <title>About Author</title>
+      <meta name="description" content="Page with offers from IAESTE Poland">
+      <meta name="keywords" content="iaeste poland internship aborad">
+      <!--
+         Bootstrap 4
+         https://getbootstrap.com/docs/4.6/getting-started/introduction/
+         -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+      <script src="{% static 'JavaScript/staticElemAdder.js' %}"></script>
+      <style>
+         body {
+         margin: 1em;
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         background-color: #005E9E;
+         }
+         /*	navbar styles*/
+         #verticalMenuElement{
+         margin: auto;
+         padding-bottom: 1.5em;
+         margin-left: 4em;
+         margin-right: 4em;
+         font-weight: bolder;
+         }
+         #verticalMenuElement ul {
+         list-style-type: none;
+         margin: 0;
+         padding: 0;
+         overflow: hidden;
+         background-color: dimgrey;
+         }
+         #verticalMenuElement li {
+         float: left;
+         }
+         #verticalMenuElement li a {
+         display: block;
+         color: white;
+         text-align: center;
+         padding: 14px 16px;
+         text-decoration: none;
+         }
+         #verticalMenuElement li a:hover {
+         background-color: #565656;
+         }
+         #verticalMenuElement .active {
+         background-color: #99da33;
+         }
+         /*	main title styling*/
+         #pageMainTitle{
+         text-align: center;
+         font-size: 2.5em;
+         font-weight: bold;
+         color: #fffc2f;
+         padding: 0.5em;
+         }
+         .container {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         }
+         .content {
+         text-align: left;
+         font-size: 1.4em;
+         font-weight: bolder;
+         }
+      </style>
+   </head>
+   <body onload="addLinksToMenu()">
+      <div id="pageMainTitle">
+         About the author
+      </div>
+      <div id="verticalMenuElement">
+         <ul>
+            <li><a id="menu-link-offers" class="container" href="">Offers List</a></li>
+            <li><a id="menu-link-map" class="container" href="">Offers Map</a></li>
+            <li><a id="menu-link-about-project" class="container" href="">About Project</a></li>
+            <li><a id="menu-link-about-author" class="container" href="">About Author</a></li>
+            <li><a id="menu-link-iaeste-poland" class="container" href="">IAESTE Poland</a></li>
+         </ul>
+      </div>
+      <div class="container">
+         <div class="content">
+            <h2>Welcome to a webapp created by Krzysztof Nazar</h2>
             <br>
-            I am a third-year student at the Gdańsk University of Technology.
+            <p>
+               Hi!
+               I am a third-year student at the Gdańsk University of Technology.
+               My life goal is to constantly develop both my soft and hard skills.
+               Gaining knowledge about new technologies as well as creating strong relationships with people are the things I concentrate on the most.
+            </p>
             <br>
-            My life goal is to constantly develop both my soft and hard skills.
-            <br>
-            Gaining knowledge about new technologies as well as creating strong relationships with people are the things I concentrate on the most.
-        </h3>
-
-        <br>
-        <h3>
-            Feel free to check my
-            <a style="color:white" href="https://github.com/KrzysztofNazar01" target="_blank">GitHub</a>
-        </h3>
-
-        <h3>
-            Or connect with me on
-            <a style="color:white" href="https://www.linkedin.com/in/krzysztof-nazar-550532219/" target="_blank">LinkedIn</a>
-        </h3>
-
-
-        <h3>
-            Or simply email me: krzysztof.nazar01@gmail.com
-        </h3>
-
-    </div>
-
-    <br>
-    <br>
-
-    <div id="authorFootnote"></div>
-
-</body>
+            <p>
+               Feel free to check my
+               <a style="color:black" href="https://github.com/KrzysztofNazar01" target="_blank">GitHub</a>
+            </p>
+            <p>
+               Or connect with me on
+               <a style="color:black" href="https://www.linkedin.com/in/krzysztof-nazar-550532219/" target="_blank">LinkedIn</a>
+            </p>
+            <p>
+               Or simply email me: krzysztof.nazar01@gmail.com
+            </p>
+         </div>
+         <br>
+         <br>
+         <div id="authorFootnote"></div>
+      </div>
+   </body>
 </html>

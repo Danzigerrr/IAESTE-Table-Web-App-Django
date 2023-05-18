@@ -1,65 +1,128 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-    <meta charset="UTF-8">
-    <title>Project page</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/aboutProjectStyling.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/verticalMenuStyles.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/authorFootnoteStyles.css' %}"/>
-    <script src="{% static 'JavaScript/JsScripts.js' %}"></script>
-    <script src="{% static 'JavaScript/staticElemAdder.js' %}"></script>
+<!doctype html>
+<html>
+   <head>
+      <title>About Project</title>
+      <meta name="description" content="Page with offers from IAESTE Poland">
+      <meta name="keywords" content="iaeste poland internship aborad">
+      <!--
+         Bootstrap 4
+         https://getbootstrap.com/docs/4.6/getting-started/introduction/
+         -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+      <script src="{% static 'JavaScript/staticElemAdder.js' %}"></script>
+      <style>
+         body {
+         margin: 1em;
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         background-color: #005E9E;
+         }
+         /*	navbar styles*/
+         #verticalMenuElement{
+         margin: auto;
+         padding-bottom: 1.5em;
+         margin-left: 4em;
+         margin-right: 4em;
+         font-weight: bolder;
+         }
+         #verticalMenuElement ul {
+         list-style-type: none;
+         margin: 0;
+         padding: 0;
+         overflow: hidden;
+         background-color: dimgrey;
+         }
+         #verticalMenuElement li {
+         float: left;
+         }
+         #verticalMenuElement li a {
+         display: block;
+         color: white;
+         text-align: center;
+         padding: 14px 16px;
+         text-decoration: none;
+         }
+         #verticalMenuElement li a:hover {
+         background-color: #565656;
+         }
+         #verticalMenuElement .active {
+         background-color: #99da33;
+         }
+         /*	main title styling*/
+         #pageMainTitle{
+         text-align: center;
+         font-size: 2.5em;
+         font-weight: bold;
+         color: #fffc2f;
+         padding: 0.5em;
+         }
+         .container {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         }
+         .content {
+         text-align: left;
+         font-size: 1.4em;
+         font-weight: bolder;
+         }
+      </style>
+   </head>
+   <body onload="addLinksToMenu()">
+      <div id="pageMainTitle">
+         About the project
+      </div>
+      <div id="verticalMenuElement">
+         <ul>
+            <li><a id="menu-link-offers" class="container" href="">Offers List</a></li>
+            <li><a id="menu-link-map" class="container" href="">Offers Map</a></li>
+            <li><a id="menu-link-about-project" class="container" href="">About Project</a></li>
+            <li><a id="menu-link-about-author" class="container" href="">About Author</a></li>
+            <li><a id="menu-link-iaeste-poland" class="container" href="">IAESTE Poland</a></li>
+         </ul>
+      </div>
+      <div class="container">
+         <div class="content">
+            <p>
+               The goal of this project was to deploy a web application displaying IAESTE Poland offers for international internships. I wanted to make the searching process much more comfortable, faster and easier for the user.
+            </p>
+            <p>
+               Data displayed on this page is downloaded from
+               <a style="color:black" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR6FjcG59djSQ_kWTfzDok-KPm_KtvwCKAz-J6h-zUr_zTHb2m2AlHCDRNRGTUdMG19py_d4q0sMVQB/pubhtml?gid=1873904204&amp;single=true&amp;widget=true&amp;headers=false" target="_blank">this spreadsheet</a>
+               shared by IAESTE Poland.
+            <p>
+            <p>
+               This app offers several key functionalities:
+            <ul>
+               <li>"Offers List" - Check every currently available offer. The table can be sorted and filtered. The user can select which columns are visible. </li>
+               <li>"Offers Map" - See the offers on the interactive map. A pin is set in every location where at least one offer is available. After clicking the button, user can go to details of selected offer.</li>
+            </ul>
+            <p>
+               <br>
+            <p>
+               From the author:
+            </p>
+            <p>
+               When I heard about IAESTE, I wanted to check their website and see the offers they had. I found only two options.
+            <ul>
+               <li>  The first one is to check PDFs - single PDF contains information about one offer and before opening the PDF the user knows only the Ref. number of the offer.
+               </li>
 
-</head>
-
-<body class="tableWithOffers" onload="addVerticalMenu(); addAuthorFootnote()">
-
-    <div class="pageTitleClass">
-        <h1>
-            Welcome on page with IAESTE offers!
-        </h1>
-    </div>
-
-    <div id="verticalMenuElement"></div>
-
-        <br>
-    <div id="fromTheAuthor">
-        <h4>
-            Data displayed on this page is downloaded from
-            <a style="color:navajowhite" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR6FjcG59djSQ_kWTfzDok-KPm_KtvwCKAz-J6h-zUr_zTHb2m2AlHCDRNRGTUdMG19py_d4q0sMVQB/pubhtml?gid=1873904204&amp;single=true&amp;widget=true&amp;headers=false" target="_blank">this spreadsheet</a>
-            shared by IAESTE Poland.
-
-        </h4>
-        <h4>
-            See the offers on the interactive map - click "Offers map" option from the menu on the left side.
-        </h4>
-        <h3>
-            From the author:
-        </h3>
-        <p>
-            When I heard about IAESTE, I wanted to check their website and see the offers they had. I found only two options.
-        </p>
-        <p>
-            The first one is to check PDFs - single PDF contains information about one offer and before opening the PDF the user knows only the Ref. number of the offer.
-        <p>
-        <p>
-            The second one is to use the spreadsheet mentioned above. It is unsealable and the only way to look for offers that might interest you is to use "ctrl+f" method.
-        </p>
-        <p>
-            Therefore, I created this project, because I wanted to make the searching process much more comfortable, faster and easier for the user.
-        </p>
-        <p>
-            This web application is built using the Django framework.
-        </p>
-
-    </div>
-
-
-    <br>
-    <br>
-
-    <div id="authorFootnote"></div>
-
-</body>
+               <li> The second one is to use the spreadsheet mentioned above. It is unsealable and the only way to look for offers that might interest you is to use "ctrl+f" method.
+               </li>
+            </ul>
+            </p>
+            <p>
+               Therefore, I created this project, because I wanted to make the searching process much more user-friendly.
+            </p>
+            <p>
+               This web application is built using the Django framework.
+            </p>
+         </div>
+         <div id="authorFootnote"></div>
+      </div>
+   </body>
 </html>

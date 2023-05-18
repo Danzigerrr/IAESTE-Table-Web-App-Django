@@ -8,7 +8,7 @@ def get_coordinates_of_city(offers: list):
     # app name it should not be none
     city = offers[0].location_city
     country = offers[0].location_country
-
+    print("city: ")
     geolocator = Nominatim(user_agent="iaeste_table")
     location = geolocator.geocode(city + ', ' + country, timeout=2000)
     if location is None:

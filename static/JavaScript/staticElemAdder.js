@@ -6,45 +6,46 @@ function getBaseUrl(){
     return urlInParts[2] + "/" + urlInParts[3] + "/";
 }
 
-function addVerticalMenu(){
-    // get base url
-    const baseUrl = getBaseUrl();
+         // horiznotal menu - add links to buttons
+         function addLinksToMenu(){
+         	const baseUrl = getBaseUrl();
+         	// create link for every menu option
+         	const menuLinkOfferList =  'http://' + baseUrl + 'offers/' ;
+         	const menuLinkOfferMap =  'http://' + baseUrl + 'map/' ;
+         	const menuLinkAboutProject = 'http://' + baseUrl + 'about-project/';
+         	const menuLinkAboutAuthor= 'http://' + baseUrl + 'about-author/';
+         	const menuLinkIaestePoland= 'https://www.iaeste.pl/';
 
-    // create link for every menu option
-    const menuLinkOfferList = '\"' + 'http://' + baseUrl + 'offers/' + '\"'
-    const menuLinkOfferMap = '\"' + 'http://' + baseUrl + 'map/' + '\"'
-    const menuLinkAboutProject = '\"' + 'http://' + baseUrl + 'about_project/' + '\"'
-    const menuLinkAboutAuthor= '\"' + 'http://' + baseUrl + 'about_author/' + '\"'
+         	document.getElementById("menu-link-offers").href=menuLinkOfferList;
 
-    // create the menu and insert the links
-    document.getElementById("verticalMenuElement").innerHTML +=
-        "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n" +
-        "    <div class=\"topnav\" id=\"myTopnav\">\n" +
-        "    <a href=" + menuLinkOfferList + ">Offers list</a>\n" +
-        "    <a href=" + menuLinkOfferMap + " target=\"_blank\">Offers map</a>\n" +
-        "    <a href=" + menuLinkAboutProject + ">About project</a>\n" +
-        "    <a href=" + menuLinkAboutAuthor + ">About author</a>\n" +
-        "      <a href=\"javascript:void(0);\" class=\"icon\" onclick=\"responsiveMenuToggle()\">\n" +
-        "        <i class=\"fa fa-bars\"></i>\n" +
-        "      </a>\n" +
-        "    </div>"
+         	document.getElementById("menu-link-map").href=menuLinkOfferMap;
+         	document.getElementById("menu-link-map").target="_blank";
 
-}
+         	document.getElementById("menu-link-about-project").href=menuLinkAboutProject;
+         	document.getElementById("menu-link-about-project").target="_blank";
 
-function addAuthorFootnote(){
-    document.getElementById("authorFootnote").innerHTML += "" +
-        "<p> Author: Krzysztof Nazar - check my <a style=\"color:white\" href=\"https://github.com/KrzysztofNazar01\" target=\"_blank\">GitHub</a>" +
-        "</p>"
+         	document.getElementById("menu-link-about-author").href=menuLinkAboutAuthor;
+         	document.getElementById("menu-link-about-author").target="_blank";
 
-}
+         	document.getElementById("menu-link-iaeste-poland").href=menuLinkIaestePoland;
+         	document.getElementById("menu-link-iaeste-poland").target="_blank";
 
-/* Toggle between adding and removing the "responsive"
-class to topnav when the user clicks on the icon */
-function responsiveMenuToggle() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
-        x.className += " responsive";
-      } else {
-        x.className = "topnav";
-      }
-    }
+                      // adjust the active menu button --> current page
+         	const currentUrl = window.location.href;
+         	switch(currentUrl) {
+         	  case menuLinkOfferList:
+         		document.getElementById("menu-link-offers").classList.add("active");
+         		break;
+         	  case menuLinkOfferMap:
+         		document.getElementById("menu-link-map").classList.add("active");
+         		break;
+         	  case menuLinkAboutProject:
+         		document.getElementById("menu-link-about-project").classList.add("active");
+         		break;
+         	  case menuLinkAboutAuthor:
+         		document.getElementById("menu-link-about-author").classList.add("active");
+         		break;
+         	  default:
+         		document.getElementById("menu-link-offers").classList.add("active");
+         	}
+                  }
