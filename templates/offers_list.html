@@ -204,24 +204,24 @@
 			</thead>
 			<tbody>
 				{% for offer in offer_list %}
-				<tr onclick="window.open('{{offer.RefNo}}', '_blank');" class="rowWithLink">
+				<tr onclick="window.open('{{offer.ref_no }}', '_blank');" class="rowWithLink">
 					<td class="Country">
-						{{offer.Country}}
+						{{offer.location_country }}
 					</td>
 					<td class="City">
-						{{offer.City}}
+						{{offer.location_city }}
 					</td>
 					<td class="Deadline">
-						{{offer.Deadline}}
+						{{offer.deadline }}
 					</td>
 					<td class="GrossPay">
-						{{offer.GrossPay}}
+						{{offer.gross_pay}}
 					</td>
 					<td class="GeneralDisciplines">
-						{{offer.GeneralDisciplines}}
+						{{offer.general_disciplines }}
 					</td>
 					<td class="OfferType">
-						{{offer.OfferType}}
+						{{offer.offer_type}}
 					</td>
 
 				</tr>
@@ -445,8 +445,8 @@
 				// create link for every menu option
 				const menuLinkOfferList =  'http://' + baseUrl + 'offers/' ;
 				const menuLinkOfferMap =  'http://' + baseUrl + 'map/' ;
-				const menuLinkAboutProject = 'http://' + baseUrl + 'aboutProject/';
-				const menuLinkAboutAuthor= 'http://' + baseUrl + 'aboutAuthor/';
+				const menuLinkAboutProject = 'http://' + baseUrl + 'about-project/';
+				const menuLinkAboutAuthor= 'http://' + baseUrl + 'about-author/';
 				const menuLinkIaestePoland= 'https://www.iaeste.pl/';
 
 				document.getElementById("menu-link-offers").href=menuLinkOfferList;

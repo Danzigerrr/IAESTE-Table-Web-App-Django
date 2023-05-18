@@ -13,8 +13,8 @@ function addVerticalMenu(){
     // create link for every menu option
     const menuLinkOfferList = '\"' + 'http://' + baseUrl + 'offers/' + '\"'
     const menuLinkOfferMap = '\"' + 'http://' + baseUrl + 'map/' + '\"'
-    const menuLinkAboutProject = '\"' + 'http://' + baseUrl + 'aboutProject/' + '\"'
-    const menuLinkAboutAuthor= '\"' + 'http://' + baseUrl + 'aboutAuthor/' + '\"'
+    const menuLinkAboutProject = '\"' + 'http://' + baseUrl + 'about_project/' + '\"'
+    const menuLinkAboutAuthor= '\"' + 'http://' + baseUrl + 'about_author/' + '\"'
 
     // create the menu and insert the links
     document.getElementById("verticalMenuElement").innerHTML +=
