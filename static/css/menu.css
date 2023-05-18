@@ -1,0 +1,36 @@
+/*	navbar styles*/
+#verticalMenuElement {
+	margin: auto;
+	padding-bottom: 1.5em;
+	margin-left: 4em;
+	margin-right: 4em;
+	font-weight: bolder;
+}
+
+#verticalMenuElement ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: dimgrey;
+}
+
+#verticalMenuElement li {
+	float: left;
+}
+
+#verticalMenuElement li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+#verticalMenuElement li a:hover {
+	background-color: #565656;
+}
+
+#verticalMenuElement .active {
+	background-color: #99da33;
+}

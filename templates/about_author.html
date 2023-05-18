@@ -13,65 +13,12 @@
       </script>
       <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-      <script src="{% static 'JavaScript/staticElemAdder.js' %}"></script>
-      <style>
-         body {
-         margin: 1em;
-         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-         background-color: #005E9E;
-         }
-         /*	navbar styles*/
-         #verticalMenuElement{
-         margin: auto;
-         padding-bottom: 1.5em;
-         margin-left: 4em;
-         margin-right: 4em;
-         font-weight: bolder;
-         }
-         #verticalMenuElement ul {
-         list-style-type: none;
-         margin: 0;
-         padding: 0;
-         overflow: hidden;
-         background-color: dimgrey;
-         }
-         #verticalMenuElement li {
-         float: left;
-         }
-         #verticalMenuElement li a {
-         display: block;
-         color: white;
-         text-align: center;
-         padding: 14px 16px;
-         text-decoration: none;
-         }
-         #verticalMenuElement li a:hover {
-         background-color: #565656;
-         }
-         #verticalMenuElement .active {
-         background-color: #99da33;
-         }
-         /*	main title styling*/
-         #pageMainTitle{
-         text-align: center;
-         font-size: 2.5em;
-         font-weight: bold;
-         color: #fffc2f;
-         padding: 0.5em;
-         }
-         .container {
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         }
-         .content {
-         text-align: left;
-         font-size: 1.4em;
-         font-weight: bolder;
-         }
-      </style>
+      <link rel="stylesheet"  type="text/css" href="{% static 'css/general_styles.css' %}" />
+      <link rel="stylesheet"  type="text/css" href="{% static 'css/menu.css' %}" />
+      <link rel="stylesheet"  type="text/css" href="{% static 'css/about_author.css' %}" />
+      <link rel="stylesheet"  type="text/css" href="{% static 'css/footer.css' %}" />
    </head>
-   <body onload="addLinksToMenu()">
+   <body onload="addLinksToMenu(); addFooter();">
       <div id="pageMainTitle">
          About the author
       </div>
@@ -84,7 +31,7 @@
             <li><a id="menu-link-iaeste-poland" class="container" href="">IAESTE Poland</a></li>
          </ul>
       </div>
-      <div class="container">
+      <div class="container" id="text_content">
          <div class="content">
             <h2>Welcome to a webapp created by Krzysztof Nazar</h2>
             <br>
@@ -97,11 +44,11 @@
             <br>
             <p>
                Feel free to check my
-               <a style="color:black" href="https://github.com/KrzysztofNazar01" target="_blank">GitHub</a>
+               <a style="color:black; text-decoration: underline;" href="https://github.com/KrzysztofNazar01" target="_blank">GitHub</a>
             </p>
             <p>
                Or connect with me on
-               <a style="color:black" href="https://www.linkedin.com/in/krzysztof-nazar-550532219/" target="_blank">LinkedIn</a>
+               <a style="color:black; text-decoration: underline;" href="https://www.linkedin.com/in/krzysztof-nazar-550532219/" target="_blank">LinkedIn</a>
             </p>
             <p>
                Or simply email me: krzysztof.nazar01@gmail.com
@@ -109,7 +56,11 @@
          </div>
          <br>
          <br>
-         <div id="authorFootnote"></div>
       </div>
+      <div id="authorFooter"></div>
+
+     <script src="{% static 'JavaScript/menu_hanlder.js' %}"></script>
+     <script src="{% static 'JavaScript/footer_handler.js' %}"></script>
+
    </body>
 </html>

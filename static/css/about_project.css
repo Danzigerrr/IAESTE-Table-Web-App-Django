@@ -1,0 +1,19 @@
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content {
+	text-align: left;
+	font-size: 1.4em;
+	font-weight: bolder;
+}
+
+#text_content {
+  border-radius: 25px;
+  background: #87cefa;
+  padding: 20px;
+  width: auto;
+  height: auto;
+}

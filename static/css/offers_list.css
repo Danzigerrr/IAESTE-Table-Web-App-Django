@@ -1,0 +1,66 @@
+/* data-filter */
+div.input-group.data-filter {
+	display: inline-flex;
+	width: 16em;
+}
+
+/* data-colpicker */
+div[data-colpicker-for] {
+	display: inline-block;
+	vertical-align: top;
+	width: 12em;
+}
+
+ul.dropdown-menu li {
+	margin: 0.15em 1em;
+}
+
+ul.dropdown-menu li label {
+	width: 100%;
+}
+
+/* data-sorter */
+table[data-sorter] thead th {
+	cursor: pointer;
+	background-color: #87cefa;
+}
+
+table[data-sorter] thead th.sort-asc:after {
+	content: '\25B2';
+	margin-left: 0.5em;
+}
+
+table[data-sorter] thead th.sort-desc:after {
+	content: '\25BC';
+	margin-left: 0.5em;
+}
+
+/* hide table rows/columns */
+th.hide-cell,
+td.hide-cell,
+tr.hide-row {
+	display: none;
+}
+
+.mainContent {
+	margin-left: 4em;
+	margin-right: 4em;
+	/*font-size: 0.8vw;*/
+}
+
+tr {
+	background-color: #a6d6f6;
+}
+
+tr:hover td {
+	background-color: #fbffa8;
+}
+
+.rowWithLink {
+	cursor: pointer;
+}
+
+
+th {
+	text-align: center;
+}

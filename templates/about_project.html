@@ -9,69 +9,16 @@
          Bootstrap 4
          https://getbootstrap.com/docs/4.6/getting-started/introduction/
          -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-      </script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"/>
       <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-      <script src="{% static 'JavaScript/staticElemAdder.js' %}"></script>
-      <style>
-         body {
-         margin: 1em;
-         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-         background-color: #005E9E;
-         }
-         /*	navbar styles*/
-         #verticalMenuElement{
-         margin: auto;
-         padding-bottom: 1.5em;
-         margin-left: 4em;
-         margin-right: 4em;
-         font-weight: bolder;
-         }
-         #verticalMenuElement ul {
-         list-style-type: none;
-         margin: 0;
-         padding: 0;
-         overflow: hidden;
-         background-color: dimgrey;
-         }
-         #verticalMenuElement li {
-         float: left;
-         }
-         #verticalMenuElement li a {
-         display: block;
-         color: white;
-         text-align: center;
-         padding: 14px 16px;
-         text-decoration: none;
-         }
-         #verticalMenuElement li a:hover {
-         background-color: #565656;
-         }
-         #verticalMenuElement .active {
-         background-color: #99da33;
-         }
-         /*	main title styling*/
-         #pageMainTitle{
-         text-align: center;
-         font-size: 2.5em;
-         font-weight: bold;
-         color: #fffc2f;
-         padding: 0.5em;
-         }
-         .container {
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         }
-         .content {
-         text-align: left;
-         font-size: 1.4em;
-         font-weight: bolder;
-         }
-      </style>
+      <link rel="stylesheet"  type="text/css" href="{% static 'css/general_styles.css' %}" />
+      <link rel="stylesheet"  type="text/css" href="{% static 'css/menu.css' %}" />
+      <link rel="stylesheet"  type="text/css" href="{% static 'css/about_project.css' %}" />
+      <link rel="stylesheet"  type="text/css" href="{% static 'css/footer.css' %}" />
+
    </head>
-   <body onload="addLinksToMenu()">
+   <body onload="addLinksToMenu(); addFooter();">
       <div id="pageMainTitle">
          About the project
       </div>
@@ -84,14 +31,14 @@
             <li><a id="menu-link-iaeste-poland" class="container" href="">IAESTE Poland</a></li>
          </ul>
       </div>
-      <div class="container">
+      <div class="container" id="text_content">
          <div class="content">
             <p>
                The goal of this project was to deploy a web application displaying IAESTE Poland offers for international internships. I wanted to make the searching process much more comfortable, faster and easier for the user.
             </p>
             <p>
                Data displayed on this page is downloaded from
-               <a style="color:black" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR6FjcG59djSQ_kWTfzDok-KPm_KtvwCKAz-J6h-zUr_zTHb2m2AlHCDRNRGTUdMG19py_d4q0sMVQB/pubhtml?gid=1873904204&amp;single=true&amp;widget=true&amp;headers=false" target="_blank">this spreadsheet</a>
+               <a style="color:black; text-decoration: underline;" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR6FjcG59djSQ_kWTfzDok-KPm_KtvwCKAz-J6h-zUr_zTHb2m2AlHCDRNRGTUdMG19py_d4q0sMVQB/pubhtml?gid=1873904204&amp;single=true&amp;widget=true&amp;headers=false" target="_blank">this spreadsheet</a>
                shared by IAESTE Poland.
             <p>
             <p>
@@ -122,7 +69,10 @@
                This web application is built using the Django framework.
             </p>
          </div>
-         <div id="authorFootnote"></div>
       </div>
+    <div id="authorFooter"></div>
+    <script src="{% static 'JavaScript/menu_hanlder.js' %}"></script>
+    <script src="{% static 'JavaScript/footer_handler.js' %}"></script>
+
    </body>
 </html>

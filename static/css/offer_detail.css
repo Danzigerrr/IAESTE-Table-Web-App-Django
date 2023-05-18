@@ -1,0 +1,103 @@
+body {
+	margin: 1em;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background-color: #005E9E;
+}
+
+/* data-sorter */
+table[data-sorter] thead th {
+	cursor: pointer;
+	background-color: #87cefa;
+}
+
+table[data-sorter] thead th.sort-asc:after {
+	content: '\25B2';
+	margin-left: 0.5em;
+}
+
+table[data-sorter] thead th.sort-desc:after {
+	content: '\25BC';
+	margin-left: 0.5em;
+}
+
+.mainContent {
+	margin-left: 4em;
+	margin-right: 4em;
+	/*font-size: 0.8vw;*/
+}
+
+tr {
+	background-color: #a6d6f6;
+}
+
+.mainContent {
+	margin-left: 4em;
+	margin-right: 4em;
+}
+
+/*	navbar styles*/
+#verticalMenuElement {
+	margin: auto;
+	padding-bottom: 1.5em;
+	margin-left: 4em;
+	margin-right: 4em;
+	font-weight: bolder;
+}
+
+#verticalMenuElement ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: dimgrey;
+}
+
+#verticalMenuElement li {
+	float: left;
+}
+
+#verticalMenuElement li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+#verticalMenuElement li a:hover {
+	background-color: #565656;
+}
+
+#verticalMenuElement .active {
+	background-color: #99da33;
+}
+
+/*	main title styling*/
+#pageMainTitle {
+	text-align: center;
+	font-size: 2.5em;
+	font-weight: bold;
+	color: #fffc2f;
+	padding: 0.5em;
+}
+
+table,
+tr,
+th,
+td {
+	border: 0.7px solid grey;
+}
+
+.tableHeader {
+	text-align: center;
+	font-weight: bolder;
+	font-size: 1.3em;
+}
+
+.rowTitle {
+	font-weight: bold;
+}
+
+td {
+	margin: 4em;
+}
