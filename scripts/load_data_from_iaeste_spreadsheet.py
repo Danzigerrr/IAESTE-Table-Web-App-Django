@@ -22,18 +22,7 @@ class DataLoader:
         name = re.sub('([a-z0-9])([A-Z])', r'\1_\2', name)
         return name.lower()
 
-    def get_offers_from_url(self):
-        df = pd.read_html(self.url, encoding='utf-8')[0]
-
-        # adjust column names
-        df.iloc[0] = df.iloc[0].str.replace(' ', '')
-        df.iloc[0] = df.iloc[0].str.replace('.', '')
-        df.columns = df.iloc[0]  # Convert row to column header
-        df = df.drop(df.index[0])  # drop unneeded row
-        df = df.drop(df.index[0])  # drop unneeded row
-        df = df.iloc[:, 1:]  # drop the first column
-
-        # rename column names
+    def rename_column_names(self, df):
         column_names_old = list(df.columns.values)
         column_names_new = []
         for column_name in column_names_old:
@@ -48,9 +37,27 @@ class DataLoader:
                            'est_costof_lodging': 'est_cost_of_lodging'},
                   inplace=True)
 
+    def get_offers_from_url(self):
+        df = pd.read_html(self.url, encoding='utf-8')[0]
+
+        # adjust column names
+        df.iloc[0] = df.iloc[0].str.replace(' ', '')
+        df.iloc[0] = df.iloc[0].str.replace('.', '')
+        df.columns = df.iloc[0]  # Convert row to column header
+        df = df.drop(df.index[0])  # drop unneeded row
+        df = df.drop(df.index[0])  # drop unneeded row
+        df = df.iloc[:, 1:]  # drop the first column
+
+        self.rename_column_names(df)
+
         df = df.reset_index()
 
+        # Remove numbers from the location column (wrong parsing by pandas.read_html()
+        df['location_city'] = df['location_city'].str.replace('\d+', '', regex=True)
+        df['location_country'] = df['location_country'].str.replace('\d+', '', regex=True)
+
         return df
+
 
     def save_active_offers(self, offers):
         for index, offer in offers.iterrows():
