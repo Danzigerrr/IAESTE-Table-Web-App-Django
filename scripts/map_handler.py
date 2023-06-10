@@ -5,23 +5,6 @@ import os
 from unidecode import unidecode
 
 
-summed_offers = 0
-
-
-def compare_strings(str1, str2):
-    if len(str1) != len(str2):
-        return False
-
-    mismatch_count = 0
-    for c1, c2 in zip(str1, str2):
-        if c1 != c2:
-            mismatch_count += 1
-            if mismatch_count > 1:
-                return False
-
-    return True
-
-
 # Function to convert special letters to normal letters
 def convert_special_letters(text):
     return unidecode(text)
@@ -37,36 +20,25 @@ def get_cities_dataframe():
 
 
 def get_city_location(df, offers):
-    global summed_offers
-
     city_name = unidecode(offers[0].location_city.lower())
     country_name = unidecode(offers[0].location_country.lower())
 
-    result = df.loc[((df['City'] == city_name) | (df['AccentCity'] == city_name))]
+    # look for the location of city where offer is located
+    result_by_city = df.loc[((df['City'] == city_name) | (df['AccentCity'] == city_name))]
 
-    # result = df.loc[(df.apply(
-    #     lambda row: compare_strings(row['city'], city_to_find) or compare_strings(row['city_ascii'], city_to_find),
-    #     axis=1)) & (df['country'] == city_in_country)]
-
-    # if result.empty:
-    #     result = df.loc[df['city'] == city_to_find]
-    num_rows, _ = result.shape
-    latitude, longitude = 0, 0
-    if not result.empty:
+    num_rows, _ = result_by_city.shape  # more than one row can be in the result
+    if not result_by_city.empty:
         if num_rows == 1:
-            latitude, longitude = result['Latitude'], result['Longitude']
+            latitude, longitude = result_by_city['Latitude'], result_by_city['Longitude']
         else:
-            # print("\nATTENTION:\n{}\n".format(result))
-            result_with_country = result.loc[(df['CountryLong'] == country_name)]
-            # print("RESSS:\n{}".format(result_with_country))
-            if not result_with_country.empty:
-                latitude, longitude = result_with_country.iloc[0]['Latitude'], result_with_country.iloc[0]['Longitude']
+            # if more than one row is in the result, check the country of offer
+            result_by_country = result_by_city.loc[(df['CountryLong'] == country_name)]
+            if not result_by_country.empty:
+                latitude, longitude = result_by_country.iloc[0]['Latitude'], result_by_country.iloc[0]['Longitude']
             else:
-                latitude, longitude = result.iloc[0]['Latitude'], result.iloc[0]['Longitude']
-        # print("SUCCS: {}, {} in {}, {}".format(str(latitude), str(longitude), city_name, country_name))
+                latitude, longitude = result_by_city.iloc[0]['Latitude'], result_by_city.iloc[0]['Longitude']
     else:
         # if the city cannot be found, put the marker in the center of the country:
-        summed_offers += len(offers)
         get_country = df.loc[(df['CountryLong'] == country_name)]
         num_rows_country, _ = get_country.shape
         if num_rows_country == 1:
@@ -74,11 +46,10 @@ def get_city_location(df, offers):
         else:
             latitude, longitude = get_country.iloc[0]['Latitude(average)'], get_country.iloc[0]['Longitude(average)']
 
-        print("ERROR: failed {} in {}, {} - total: {}".format(len(offers), city_name, country_name, summed_offers))
-
     lat = float(latitude)
     lon = float(longitude)
-    # print("lat: {}, lon: {}".format(lat, lon))
+
+    # save the location of offer
     for offer in offers:
         offer.location_latitude = lat
         offer.location_longitude = lon
@@ -152,7 +123,6 @@ def create_popup_html(offer_list, offer_count, url_from_request):
 
 
 def count_frequencies_of_cities(allOffers):
-    # Creating an empty dictionary
     freq = {}
     for offer in allOffers:
         if offer.location_city in freq:
@@ -218,11 +188,7 @@ def create_map_for_offers(url_from_request):
             folium.Marker(location=[latitude, longitude], popup=popup,
                           icon=folium.Icon(color='blue', icon='university', prefix='fa')).add_to(map_with_offers)
 
-    perc = float(100 * summed_offers / len(Offer.objects.all()))
-    print("TOTAL: {} out of {} = {} perc.".format(summed_offers, len(Offer.objects.all()), perc))
-
     map_as_html = map_with_offers.get_root().render()
-
     map_as_html = add_styles_to_map(map_as_html)
 
     return map_as_html
