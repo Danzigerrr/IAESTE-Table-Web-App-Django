@@ -198,8 +198,8 @@ def create_map_for_offers(url_from_request):
     city_freq = count_frequencies_of_cities(Offer.objects.all())
 
     map_with_offers = folium.Map(
-        location=[13, 16],
-        zoom_start=2,
+        location=[14, 16],
+        zoom_start=4,
     )
 
     cities_df = get_cities_dataframe()

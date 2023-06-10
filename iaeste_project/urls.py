@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from django.shortcuts import redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('iaeste_table/', include('iaeste_table.urls')),
+    path('', lambda req: redirect('/iaeste_table/offers/')),
     # path('__debug__/', include('debug_toolbar.urls')),
 
 ]
