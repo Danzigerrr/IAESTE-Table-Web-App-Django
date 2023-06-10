@@ -164,3 +164,4 @@ cython_debug/
 iaeste_table/migrations/
 generatedMaps/*.html
 .idea
+world_locations_data

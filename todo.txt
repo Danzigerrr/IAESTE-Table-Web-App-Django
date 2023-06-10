@@ -1,9 +1,0 @@
-save location to the object
-
-delete numbers from country and city name
-
-look what to add in the table:
-- Between X and Y weeks
-- Z weeks
-
-refactor code -> PEP8.0 Rules
