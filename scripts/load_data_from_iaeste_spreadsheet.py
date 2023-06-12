@@ -56,6 +56,9 @@ class DataLoader:
         df['location_city'] = df['location_city'].str.replace('\d+', '', regex=True)
         df['location_country'] = df['location_country'].str.replace('\d+', '', regex=True)
 
+        # adjust the values in work offered description - styling
+        df['work_offered_description'] = df['work_offered_description'].str.replace('•', '<br>•')
+
         return df
 
 

@@ -1,0 +1,54 @@
+{% load static %}
+<!doctype html>
+<html>
+   <head>
+      <title>About Project</title>
+      <meta name="description" content="Page with offers from IAESTE Poland">
+      <meta name="keywords" content="iaeste poland internship aborad">
+      <!--
+         Bootstrap 4
+         https://getbootstrap.com/docs/4.6/getting-started/introduction/
+         -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"/>
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+      <link rel="stylesheet"  type="text/css" href="{% static 'css/general_styles.css' %}" />
+      <link rel="stylesheet"  type="text/css" href="{% static 'css/menu.css' %}" />
+      <link rel="stylesheet"  type="text/css" href="{% static 'css/about_project.css' %}" />
+      <link rel="stylesheet"  type="text/css" href="{% static 'css/footer.css' %}" />
+
+   </head>
+   <body onload="addLinksToMenu(); addFooter();">
+      <div id="pageMainTitle">
+         IAESTE Poland offers
+      </div>
+      <div id="verticalMenuElement">
+         <ul>
+            <li><a id="menu-link-offers" class="container" href="">Offers List</a></li>
+            <li><a id="menu-link-map" class="container" href="">Offers Map</a></li>
+            <li><a id="menu-link-about-project" class="container" href="">About Project</a></li>
+            <li><a id="menu-link-about-author" class="container" href="">About Author</a></li>
+            <li><a id="menu-link-iaeste-poland" class="container" href="">IAESTE Poland</a></li>
+         </ul>
+      </div>
+      <div class="container" id="text_content">
+         <div class="content">
+            <div id="notfound">
+                <div class="notfound">
+                    <div class="notfound-404">
+                        <h1>Error 404 occurred</h1>
+                    </div>
+                    <h2>Oops! Nothing was found</h2>
+                    <p>The page you are looking for might have been removed had its name changed or is temporarily unavailable.
+                    </p>
+                    <p><a href="/">Return to homepage</a></p>
+                </div>
+            </div>
+         </div>
+      </div>
+    <div id="authorFooter"></div>
+    <script src="{% static 'JavaScript/menu_hanlder.js' %}"></script>
+    <script src="{% static 'JavaScript/footer_handler.js' %}"></script>
+
+   </body>
+</html>

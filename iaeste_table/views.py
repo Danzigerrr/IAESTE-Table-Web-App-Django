@@ -63,3 +63,11 @@ def about_project(request):
 
 def about_author(request):
     return render(request, "about_author.html")
+
+
+def handler404(request, exception):
+    return render(request, 'error_404_page.html', status=404)
+
+
+def handler500(request):
+    return render(request, 'error_500_page.html', status=500)

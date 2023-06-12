@@ -12,3 +12,4 @@ urlpatterns = [
     path('about-project/', views.about_project, name='about project'),
     path('about-author/', views.about_author, name='about author'),
 ]
+
