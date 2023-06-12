@@ -11,7 +11,7 @@ def convert_special_letters(text):
 
 
 def get_cities_dataframe():
-    df = pd.read_csv('worldcitiespop_wherePopIsNan_2.csv', delimiter=',', index_col=False)
+    df = pd.read_csv('cities_locations.csv', delimiter=',', index_col=False)
 
     # Apply the function to the whole dataframe
     columns_to_convert = ['CountryLong', 'City', 'AccentCity']
