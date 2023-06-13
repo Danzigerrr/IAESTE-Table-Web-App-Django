@@ -21,7 +21,7 @@ Text source: [link](https://iaeste.org/about)
 The official website of IAESTE Poland is available [here](https://www.iaeste.pl/).
 
 <p align="center">
-  <img src="readme_images/iaeste_poland_logo.png" alt="iaeste_poland_logo"/>
+  <img src="readme_images/iaeste_poland_logo_small.png" alt="iaeste_poland_logo"/>
 </p>
 
 Image source: [link](https://www.facebook.com/IaestePoland)
