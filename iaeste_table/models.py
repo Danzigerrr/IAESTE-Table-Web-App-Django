@@ -33,6 +33,7 @@ class Offer(models.Model):
     est_cost_of_lodging = models.CharField(max_length=100, default="")
     additional_info = models.CharField(max_length=500, default="")
     offer_type = models.CharField(max_length=50, default="")
+    iaeste_pdf_link = models.CharField(max_length=200, default="")
 
     def __str__(self):
         return self.ref_no

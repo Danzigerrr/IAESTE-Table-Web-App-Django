@@ -22,7 +22,7 @@
    </head>
    <body onload="addLinksToMenu(); addFooter();">
       <div id="pageMainTitle">
-         IAESTE Poland offers - {{offer_list_len}} available
+         IAESTE Poland offers - {{ offer_list_len}} available
       </div>
       <div id="verticalMenuElement">
          <ul>
@@ -62,6 +62,9 @@
             <thead>
                <tr>
                   <th>
+                     Ref. No.
+                  </th>
+                   <th>
                      Country
                   </th>
                   <th>
@@ -95,36 +98,39 @@
             </thead>
             <tbody>
                {% for offer in offer_list %}
-               <tr onclick="window.open('{{offer.ref_no }}', '_blank');" class="rowWithLink">
+               <tr onclick="window.open('{{ offer.ref_no }}');" class="rowWithLink">
+                  <td class="RefNo">
+                     {{ offer.ref_no }}
+                  </td>
                   <td class="Country">
-                     {{offer.location_country }}
+                     {{ offer.location_country }}
                   </td>
                   <td class="City">
-                     {{offer.location_city }}
+                     {{ offer.location_city }}
                   </td>
                   <td class="Deadline" style="text-align: center">
-                     {{offer.deadline }}
+                     {{ offer.deadline }}
                   </td>
                   <td class="DateFrom" style="text-align: center">
-                     {{offer.date_from }}
+                     {{ offer.date_from }}
                   </td>
                   <td class="DateTo" style="text-align: center">
-                     {{offer.date_to }}
+                     {{ offer.date_to }}
                   </td>
                   <td class="WorkWeeksMin" style="text-align: center">
-                     {{offer.work_weeks_min }}
+                     {{ offer.work_weeks_min }}
                   </td>
                   <td class="WorkWeeksMax" style="text-align: center">
-                     {{offer.work_weeks_max }}
+                     {{ offer.work_weeks_max }}
                   </td>
                   <td class="GrossPay">
-                     {{offer.gross_pay}}
+                     {{ offer.gross_pay}}
                   </td>
                   <td class="GeneralDisciplines">
-                     {{offer.general_disciplines }}
+                     {{ offer.general_disciplines }}
                   </td>
                   <td class="OfferType" style="text-align: center">
-                     {{offer.offer_type}}
+                     {{ offer.offer_type}}
                   </td>
                </tr>
                {% endfor %}

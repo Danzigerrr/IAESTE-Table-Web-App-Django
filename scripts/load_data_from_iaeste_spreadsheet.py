@@ -1,7 +1,7 @@
 from iaeste_table.models import Offer
 import re
 import pandas as pd
-
+import urllib.parse
 
 class DataLoader:
     # url of spreasheet with IAESTE offers in Poland
@@ -64,15 +64,26 @@ class DataLoader:
 
     def save_active_offers(self, offers):
         for index, offer in offers.iterrows():
-            # print("saving " + str(offerHTML.ref_no))
             offer_ref_no = offer['ref_no']
             if Offer.objects.filter(ref_no=offer_ref_no).exists():
-                # print("the offer " + str(offerHTML.ref_no) + " already exists in the DB")
+                # print("the offer " + str(offer.ref_no) + " already exists in the DB")
                 pass
             else:
                 self.save_offer_to_database(offer)
 
+    def create_link_to_pdf_from_iaeste(self, ref_no):
+
+        # conversion example: "SK-2023-ZA-02" --> "%2FSK%2D2023%2DZA%2D02"
+        ref_no_converted = urllib.parse.quote(ref_no)
+        base_url = "https://iaestepolska-my.sharepoint.com/personal/exchange_iaeste_pl/_layouts/15/onedrive.aspx?ga=1&id=%2Fpersonal%2Fexchange%5Fiaeste%5Fpl%2FDocuments%2FnotACoffers%2FAvailable%20notACoffers%2F"
+        parent_url = "%2Epdf&parent=%2Fpersonal%2Fexchange%5Fiaeste%5Fpl%2FDocuments%2FnotACoffers%2FAvailable%20notACoffers"
+        link = base_url + ref_no_converted + parent_url
+
+        return link
+
     def save_offer_to_database(self, offer):
+        print("saving " + str(offer.ref_no))
+        iaeste_pdf_link = self.create_link_to_pdf_from_iaeste(offer.ref_no)
         offer = Offer(
             ref_no=offer.ref_no,
             deadline=offer.deadline,
@@ -102,7 +113,8 @@ class DataLoader:
             living_cost=offer.living_cost,
             est_cost_of_lodging=offer.est_cost_of_lodging,
             additional_info=offer.additional_info,
-            offer_type=offer.offer_type
+            offer_type=offer.offer_type,
+            iaeste_pdf_link=iaeste_pdf_link
         )
         offer.save()
 
