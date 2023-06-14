@@ -92,7 +92,8 @@ The major steps in this project were:
 
 ## Possible future improvements
 Based on my experience while using the app, I thought of adding the following functionalities:
- - **Add more responsive CSS styling** - adjusted for mobile phones
+ - **Add more responsive CSS styling** - The styling should be adjusted for mobile phones.
+ - **Add currency exchange rates calculations** - Since the offers come from various parts of the world, multiple currencies are used. It would be beneficial to provide an option that allows users to easily calculate the equivalent gross pay in a specific currency, such as Euros.
 
 ## Contributing
 
