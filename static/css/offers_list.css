@@ -63,3 +63,29 @@ tr:hover td {
 th {
 	text-align: center;
 }
+
+
+
+
+
+#DeadlineTableHeader{
+	min-width: 5em
+}
+#FromTableHeader{
+	min-width: 4em
+}
+#ToTableHeader{
+	min-width: 4em
+}
+#GeneralDisciplinesTableHeader {
+	min-width: 12em
+}
+
+/* Styles for mobile phones */
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+
+
+}
